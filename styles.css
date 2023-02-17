@@ -5,8 +5,20 @@
 
 #ze-pos-quick-access {
     background-color:rgb(248, 249, 249, 1);
-    width: 70vw;
-    padding: 3vw;
+    padding-top: 2vw;
+    padding-left: 4vw;
+    padding-bottom: 1.5vw;
+}
+
+#ze-pos-quick-access-icon {
+    width:4vw;
+    height: 2vw;
+}
+
+#ze-pos-quick-access-text {
+    font-size: 1.5vw;
+    font-weight: 600;
+    text-align: left;
 }
 
 #ze-pos-categories-and-search {
@@ -22,8 +34,10 @@
 #ze-pos-simulate-delivery-button,
 #ze-pos-cupons-button {
     background-color: white;
-    width: 30vw;
-    margin-top: 2vw;
+    margin-top: 1.3vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    border: 1px solid rgb(223, 223, 225);
 }
 
 .nopadding {
@@ -31,8 +45,21 @@
     margin: 0 !important;
  }
 
-.icon,
-.text {
-  vertical-align: middle;
-  display: inline-block;
+.button-text {
+    font-weight: 600;
+    font-size: 1.4vw;
+    text-align: left;
+}
+
+.button-subtext {
+    font-size: 1vw;
+    letter-spacing: 0.01vw;
+    font-weight: 300;
+    text-align: left;
+    color: gray;
+}
+
+.button-icon {
+    width: 7vw;
+    margin-top: 0.4vw;
 }
