@@ -12,16 +12,46 @@
   <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-8 nopadding">
                 <section id="ze-pos-user-info">
                     <p id="ze-pos-title-store">Luuna Masaryk<img id="ze-pos-edit-spacing" src = "./assets/edit-icon.svg" alt="editar tienda"/></p>
                     <p id="ze-pos-user-name">Clara Chia<span id="ze-pos-user-badge">Miembro</span></p>
                 </section>
                 
-                <section id="ze-pos-quick-access">
-                    <p>Accesos rapidos</p>
-                    <button> Simular envio </button>
-                    <button> Promos y cupones</button>
+                <section id="ze-pos-quick-access" class="row">
+                    <div id="ze-pos-quick-access-icon"class="col-sm-1 d-flex"> 
+                        <img src = "./assets/varita-accesos-rapidos.svg"/>
+                    </div>
+                    <div id="ze-pos-quick-access-text" class="col-sm-11 nopadding">Accesos rápidos</div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button id="ze-pos-simulate-delivery-button" class="row"> 
+                                <div class="col-sm-9">
+                                    <div class='button-text'>Simular envío</div>
+                                    <div class='button-subtext'>Ingresando código postal</div>
+                                </div>
+                                <div class="col-sm-3 d-flex justify-content-center"> 
+                                    <div class="button-icon">
+                                        <img src = "./assets/simular-envio.svg"/>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button id="ze-pos-cupons-button" class="row"> 
+                                <div class="col-sm-9">
+                                    <div class='button-text'>Promos y cupones</div>
+                                    <div class='button-subtext'>Encuentra vouchers disponibles</div>
+                                </div>
+                                <div class="col-sm-3 d-flex justify-content-center"> 
+                                    <div class="button-icon">
+                                        <img src = "./assets/promos-cupones.svg"/>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
                 </section>
 
                 <section id="ze-pos-categories-and-search">
