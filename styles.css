@@ -58,18 +58,19 @@
     font-weight: var(--font-weight-bold);
     letter-spacing: 2%;
     line-height: 24px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 #ze-pos-edit-spacing {
     padding-left: 7px;
+    padding-bottom: 5px;
 }
 
 #ze-pos-user-name {
     color: var(--color-neutral-500);
     font-size: var(--font-size-h5);
     font-weight: var(--font-weight-regular);
-    line-height: 19.09px;
+    line-height: 20px;
     letter-spacing: 2%;
     align-items: center;
 }
