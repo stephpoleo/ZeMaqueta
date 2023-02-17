@@ -16,7 +16,8 @@
     --font-size-h4:18px;
     --font-size-h5:16px;
     --font-size-p:14px;
-    --font-size-small:13px;
+    --font-size-regular:13px;
+    --font-size-regular:10px;
 
     /* Color Pallete */
 	--color-primary-50:#005CB9;
@@ -45,4 +46,43 @@
     
 
 
+<<<<<<< Updated upstream
+=======
+#ze-pos-product-grid {
+    background-color:rgba(238, 255, 0, 0.623);
+    margin: 2vh;
+}
+
+#ze-pos-title-store {
+    color: var(--color-neutral-700);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 2%;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+#ze-pos-edit-spacing {
+    padding-left: 7px;
+}
+
+#ze-pos-user-name {
+    color: var(--color-neutral-500);
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-regular);
+    line-height: 19.09px;
+    letter-spacing: 2%;
+}
+
+#ze-pos-user-badge {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-regular);
+    line-height: 19.09px;
+    letter-spacing: 2%;
+    background-color: var(--color-neutral-300);
+    color: var(--color-neutral-700);
+    padding: 5px 7px;
+    text-align: center;
+    border-radius: 80px;
+>>>>>>> Stashed changes
 }
