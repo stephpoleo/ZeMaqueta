@@ -1,0 +1,19 @@
+#ze-pos-user-info {
+    background-color:rgb(0, 255, 72);
+    margin: 2vh;
+}
+
+#ze-pos-quick-access {
+    background-color:rgb(255, 119, 0);
+    margin: 2vh;
+}
+
+#ze-pos-categories-and-search {
+    background-color:rgba(255, 119, 0, 0.623);
+    margin: 2vh;
+}
+
+#ze-pos-product-grid {
+    background-color:rgba(238, 255, 0, 0.623);
+    margin: 2vh;
+}
