@@ -4,8 +4,8 @@
 }
 
 #ze-pos-quick-access {
-    background-color:rgb(255, 119, 0);
-    margin: 2vh;
+    background-color:rgb(105, 173, 173);
+    width: 70vw;
 }
 
 #ze-pos-categories-and-search {
@@ -17,3 +17,8 @@
     background-color:rgba(238, 255, 0, 0.623);
     margin: 2vh;
 }
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
