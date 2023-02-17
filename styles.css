@@ -4,8 +4,9 @@
 }
 
 #ze-pos-quick-access {
-    background-color:rgb(105, 173, 173);
+    background-color:rgb(248, 249, 249, 1);
     width: 70vw;
+    padding: 3vw;
 }
 
 #ze-pos-categories-and-search {
@@ -18,7 +19,20 @@
     margin: 2vh;
 }
 
+#ze-pos-simulate-delivery-button,
+#ze-pos-cupons-button {
+    background-color: white;
+    width: 30vw;
+    margin-top: 2vw;
+}
+
 .nopadding {
     padding: 0 !important;
     margin: 0 !important;
  }
+
+.icon,
+.text {
+  vertical-align: middle;
+  display: inline-block;
+}
