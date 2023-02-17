@@ -1,4 +1,4 @@
-:root{
+:root {
     /* font type */
     --font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    
@@ -42,8 +42,6 @@
     --color-status-50:#2E7D32;
     --color-status-300:#FE9339;
     --color-status-500:#B00020;
-
-    
 }
 
 #ze-pos-user-info {
@@ -114,6 +112,7 @@
     border-radius: 80px;
     margin-left: 8px;
     align-items: center;
+}
 
 #ze-pos-simulate-delivery-button,
 #ze-pos-cupons-button {
