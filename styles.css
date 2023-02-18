@@ -96,7 +96,7 @@
 #ze-pos-user-name {
     color: var(--color-neutral-500);
     font-size: var(--font-size-h5);
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-light);
     line-height: 2.8vh;
     letter-spacing: 2%;
     align-items: center;
@@ -114,6 +114,7 @@
     border-radius: 5.55vw;
     margin-left: 0.5vw;
     align-items: center;
+}
 
 #ze-pos-simulate-delivery-button,
 #ze-pos-cupons-button {
