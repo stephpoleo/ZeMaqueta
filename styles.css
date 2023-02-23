@@ -226,33 +226,33 @@
     font-weight: 400;
 }
 
-
-/* #ze-pos-quotation-search-form input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    width: 80%;
-    background: #fbfbfb;
-}
-  
-#ze-pos-quotation-search-form button {
-    float: left;
-    width: 100%;
-    padding: 10px;
-    background: #2196F3;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none; 
-    cursor: pointer;
+#ze-pos-quotation-shopping-cart {
+    border: 1px solid rgb(223, 223, 225);
+    box-shadow: 1.3vw -1.3vw 2vw rgb(149, 149, 149);
 }
 
-#ze-pos-quotation-search-form button:hover {
-    background: #0b7dda;
+#ze-pos-quotation-add-client {
+    margin-top: 2vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    padding-bottom: 1vw;
+    border-bottom: 1px ridge rgb(233,233,233);
 }
 
-#ze-pos-quotation-search-form::after {
-    content: "";
-    clear: both;
-    display: table;
-} */
+#ze-pos-quotation-add-client-user-icon {
+    width: fit-content;
+    padding-bottom: 0.4vw;
+    border-radius: 0.5vw;
+    border: 1px solid rgb(223, 223, 225);
+}
+
+#ze-pos-quotation-add-client-text {
+    font-size: 1.2vw;
+    font-weight: 500;
+    padding-top: 0.2vw;
+}
+
+#ze-pos-quotation-add-client-download-icon {
+    width: fit-content;
+    margin-left: 1vw;
+}
