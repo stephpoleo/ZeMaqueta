@@ -1,4 +1,4 @@
-var wrapper = document.getElementById("ze-pos-category-list");
+var wrap_category_list = document.getElementById("ze-pos-category-list");
                       
 var dynamicList = '';
 var categoryList = ['Colchones', 'Almohadas', 'Blancos', 'Muebles']
@@ -7,7 +7,7 @@ for (var i = 0; i < 4; i++) {
     dynamicList  += '<button id="ze-pos-category-button">' + categoryList[i] + '</button>';
 }
 
-wrapper.innerHTML = dynamicList 
+wrap_category_list.innerHTML = dynamicList 
 
 var wrap_item_list = document.getElementById("ze-pos-item-list");
 var columns = 2;
