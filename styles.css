@@ -45,7 +45,7 @@
 }
 
 #ze-pos-user-info {
-    background-color:rgb(0, 255, 72);
+    background-color:rgb(255, 255, 255);
     margin: 2vh;
 }
 
@@ -68,13 +68,11 @@
 }
 
 #ze-pos-categories-and-search {
-    background-color:rgba(255, 119, 0, 0.623);
-    margin: 2vh;
+    margin: 1vw;
 }
 
-#ze-pos-product-grid {
-    background-color:rgba(238, 255, 0, 0.623);
-    margin: 2vh;
+#ze-pos-item-grid {
+    padding: 1.2vw;
 }
 
 #ze-pos-title-store {
@@ -146,3 +144,118 @@
     width: 7vw;
     margin-top: 0.4vw;
 }
+
+#ze-pos-categories-and-search{
+    margin-top: 1.4vw;
+    margin-bottom: 0vw;
+    margin-right: 1.8vw;
+}
+
+#ze-pos-category-button {
+    margin-top: 0.2vw;
+    color: #848484;
+    background-color: white;
+    border: 1px solid white;
+}
+
+#ze-pos-category-button:focus {
+    box-shadow: 0 2px rgb(0, 92, 185);
+    color: black;
+}
+
+#ze-pos-quotation-search {
+    float: right;
+    width: fit-content;
+    border-radius: 0.5vw;
+    border: 1px solid rgb(223, 223, 225);
+}
+
+#ze-pos-quotation-search input[type=text]{
+    width: 13vw;
+    color: #848484;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+#ze-pos-quotation-search button{
+    border: 1px solid rgb(255, 255, 255);
+    background: #ffffff;
+}
+
+#ze-pos-item-grid {
+    display: flex;
+}
+
+#ze-pos-item-grid-column {
+    flex: 1;
+}
+
+#ze-pos-item-grid-row {
+    margin: 0.5vw;
+    background-color: white;
+    border-radius: 0.5vw;
+    border: 1px solid rgb(223, 223, 225);
+}
+
+#ze-pos-item-info {
+    height: fit-content;
+}
+
+#ze-pos-item-title {
+    color: #005CB9;
+    font-size: 1.3vw;
+    margin-top: 1vw;
+    font-weight: 700;
+}
+
+#ze-pos-item-sku {
+    padding-right: 0 !important;
+    font-size: 1vw;
+    font-weight: 200;
+}
+
+#ze-pos-item-availability {
+    padding-left: 0.4vw;
+    font-size: 1vw;
+    font-weight: 200;
+}
+
+#ze-pos-item-image {
+    transform:scale(0.6)
+}
+
+#ze-pos-item-actual-price,
+#ze-pos-item-disccount-price {
+    font-size: 1vw;
+    font-weight: 400;
+}
+
+
+/* #ze-pos-quotation-search-form input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 80%;
+    background: #fbfbfb;
+}
+  
+#ze-pos-quotation-search-form button {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; 
+    cursor: pointer;
+}
+
+#ze-pos-quotation-search-form button:hover {
+    background: #0b7dda;
+}
+
+#ze-pos-quotation-search-form::after {
+    content: "";
+    clear: both;
+    display: table;
+} */
