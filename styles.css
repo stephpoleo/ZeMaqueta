@@ -44,215 +44,492 @@
     --color-status-500:#B00020;
 }
 
+#ze-pos-quotation-main {
+    width: 100vw;
+}
 #ze-pos-user-info {
-    background-color:rgb(255, 255, 255);
     margin: 2vh;
 }
 
-#ze-pos-quick-access {
-    background-color:rgb(248, 249, 249, 1);
-    padding-top: 2vw;
-    padding-left: 4vw;
-    padding-bottom: 1.5vw;
-}
-
-#ze-pos-quick-access-icon {
-    width:4vw;
-    height: 2vw;
-}
-
-#ze-pos-quick-access-text {
-    font-size: 1.5vw;
-    font-weight: 600;
-    text-align: left;
-}
-
-#ze-pos-categories-and-search {
-    margin: 1vw;
-    margin-top: 1.4vw;
-    margin-bottom: 0vw;
-    margin-right: 1.8vw;
-}
-
-#ze-pos-item-grid {
-    padding: 1.2vw;
-}
-
 #ze-pos-title-store {
-    color: var(--color-neutral-700);
-    font-size: var(--font-size-h2);
+    font-size: var(--font-size-h4);
     font-weight: var(--font-weight-bold);
+    line-height: 1.667vw;
+    text-align: left;
+    vertical-align: center;
     letter-spacing: 2%;
-    line-height: 24px;
-    margin-bottom: 6px;
+    color: var(--brand-color-primary50);
+    margin-top: 5.846vh;
+    margin-left: 3.889vw;
+    margin-bottom: 1.035vh;
 }
 
 #ze-pos-edit-spacing {
-    padding-left: 7px;
-    padding-bottom: 5px;
+    width: 1.25vw;
+    height: 1.25vw;
+    padding-left: 0.486vw;
+    padding-bottom: 0.347vw;
 }
 
 #ze-pos-user-name {
-    color: var(--color-neutral-500);
-    font-size: var(--font-size-h5);
+    font-size: var(--font-size-h6);
     font-weight: var(--font-weight-regular);
-    line-height: 20px;
+    line-height: 1.319vw;
+    text-align: left;
+    vertical-align: center;
     letter-spacing: 2%;
-    align-items: center;
+    color: var(--color-neutral-500);
+    margin-left: 3.889vw;
+    margin-bottom: 2.984vh;
 }
 
 #ze-pos-user-badge {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-medium);
-    line-height: 19.09px;
-    letter-spacing: 2%;
-    background-color: var(--color-neutral-300);
-    color: var(--color-neutral-700);
-    padding: 5px 7px;
+    line-height: 1.326vw;
     text-align: center;
-    border-radius: 80px;
-    margin-left: 8px;
-    align-items: center;
+    vertical-align: center;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+    background-color: var(--color-neutral-300);
+    padding: 5px 7px;
+    border-radius: 5.556vw;
+    margin-left: 0.556vw;
+}
+
+#ze-pos-quick-access {
+    background-color: var(--brand-color-neutral100);
+    width: auto;
+    height: 19.488vh;
+    padding-left: 2vw;
+}
+
+#ze-pos-quick-access-icon {
+    color: var(--brand-color-primary50);
+    width: 1.458vw;
+    height: 2.557vh;
+    margin-left: 3.993vw;
+    margin-top: 2.7vh;
+    padding: 0 !important;
+}
+
+#ze-pos-quick-access-text {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.667vw;
+    text-align: left;
+    vertical-align: center;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+    margin-top: 3vh;
+    margin-left: 0.521vw;
+    padding: 0 !important;
 }
 
 #ze-pos-simulate-delivery-button,
 #ze-pos-cupons-button {
-    background-color: white;
-    margin-top: 1.3vw;
-    padding: 1vw;
-    border-radius: 0.5vw;
-    border: 1px solid rgb(223, 223, 225);
+    background-color: var(--brand-color-neutral50);
+    border-radius: 0.565vw;
+    border: 1px solid var(--brand-color-neutral300);
+    margin-top: 1.948vh;
+    margin-left: 3vw;
+    margin-bottom: 2.923vh;
+    padding: 0.972vw;
 }
 
-.nopadding {
-    padding: 0 !important;
-    margin: 0 !important;
- }
-
 .button-text {
-    font-weight: 600;
-    font-size: 1.4vw;
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.389vw;
     text-align: left;
+    vertical-align: center;
+    letter-spacing: 2%;
+    color: solid var(--brand-color-primary50);
+    margin-bottom: 0.974vh;
 }
 
 .button-subtext {
-    font-size: 1vw;
-    letter-spacing: 0.01vw;
-    font-weight: 300;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.111vw;
     text-align: left;
-    color: gray;
+    vertical-align: top;
+    color: var(--brand-color-neutral500);
 }
 
 .button-icon {
-    width: 7vw;
-    margin-top: 0.4vw;
+    width: 6vw;
+    margin: 0.3vw;
+}
+
+#ze-pos-categories-and-search {
+    margin: 3.288vh 3.889vw ;
+}
+
+#ze-pos-category-list {
+    white-space: nowrap;
+    overflow-x: auto;
+    width: 40vw;
 }
 
 #ze-pos-category-button {
-    margin-top: 0.2vw;
-    color: #848484;
-    background-color: white;
-    border: 1px solid white;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.667vw;
+    text-align: center;
+    vertical-align: center;
+
+    margin: 1.111vw;
+    color: var(--brand-color-neutral500);
+    background-color: var(--brand-color-neutral50);
+    border: 1px solid var(--brand-color-neutral50);
 }
 
 #ze-pos-category-button:focus {
-    box-shadow: 0 2px rgb(0, 92, 185);
-    color: black;
+    box-shadow: 0 2px var(--brand-color-secondary300);
+    color: var(--brand-color-primary50);
 }
 
 #ze-pos-quotation-search {
-    float: right;
     width: fit-content;
+    height: 7vh;
     border-radius: 0.5vw;
-    border: 1px solid rgb(223, 223, 225);
+    background-color: var(--brand-color-neutral50);
+    border: 1px solid var(--brand-color-neutral400);
+    padding: 0 !important;
+}
+
+#ze-pos-quotation-search-icon {
+    color: var(--brand-color-neutral600);
+    margin-top: 1.7vw;
+    margin-left: 2vw;
+    position: absolute;
 }
 
 #ze-pos-quotation-search input[type=text]{
-    width: 13vw;
-    color: #848484;
-    border: 1px solid rgb(255, 255, 255);
-}
-
-#ze-pos-quotation-search button{
-    border: 1px solid rgb(255, 255, 255);
-    background: #ffffff;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.111vw;
+    text-align: center;
+    color: var(--brand-color-neutral500);
+    width: 15vw;
 }
 
 #ze-pos-item-grid {
-    display: flex;
+    display: inline-flex;
+    margin-left: 3.889vw;
+    padding: 0 !important;
 }
 
 #ze-pos-item-grid-column {
     flex: 1;
 }
 
-#ze-pos-item-grid-row {
-    margin: 0.5vw;
+.ze-pos-item-grid-row {
+    width: 30vw;
+    margin: 0.556vw;
     background-color: white;
+    border-radius: 0.5vw;
+    border: 1px solid var(--brand-color-neutral400);
+}
+
+#ze-pos-item-info {
+    width: 17.778vw;
+    height: 11.693vh;
+    padding: 0 !important;
+}
+
+#ze-pos-item-title {
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.389vw;
+    text-align: left;
+    vertical-align: center;
+    letter-spacing: 2%;  
+    color: var(--brand-color-secondary300);
+    margin: 0.833vw;
+}
+
+#ze-pos-item-sku {
+    font-size: var(--font-size-m-p-small);
+    line-height: 1.111vw;
+    text-align: left;
+    vertical-align: center;
+    letter-spacing: 2%;  
+    color: var(--brand-color-neutral500);
+    margin-left: 0.833vw;
+}
+
+#ze-pos-item-availability {
+    font-size: var(--font-size-m-p-small);
+    line-height: 1.111vw;
+    text-align: left;
+    vertical-align: center;
+    letter-spacing: 2%;  
+    color: var(--brand-color-neutral500);
+    padding: 0 !important;
+}
+
+#ze-pos-item-image-space {
+    width: 6.528vw;
+    height: 11.693vh;
+}
+
+#ze-pos-item-image {
+    width: fit-content;
+    height: 7.795vh;
+}
+
+#ze-pos-item-actual-price {
+    font-size: var(--font-size-m-p-small);
+    line-height: 0.972vw;
+    text-align: left;
+    vertical-align: center;
+    color: var(--brand-color-neutral600);
+    margin-left: 0.833vw;
+    margin-bottom: 0.833vw;
+}
+
+#ze-pos-item-disccount-price {
+    font-size: var(--font-size-m-p-small);
+    line-height: 0.972vw;
+    text-align: left;
+    vertical-align: center;
+    color: var(--brand-color-secondary50);
+    margin-bottom: 0.833vw;
+}
+
+#ze-pos-quotation-add-client-and-shopping-cart {
+    height: 100vh;
+    width: 30vw;
+    border: 1px solid var(--brand-color-neutral300);
+    box-shadow: 1.3vw -1.3vw 2vw var(--brand-color-neutral500);
+    display: flex;
+    flex-direction: column;
+
+}
+
+#ze-pos-quotation-add-client {
+    margin-top: 2vw;
+    margin-left: 1.667vw;
+    margin-right: 1.667vw;
+    padding-bottom: 1vw;
+    border-bottom: 1px ridge var(--brand-color-neutral400);
+}
+
+#ze-pos-quotation-add-client-user-icon {
+    width: 2.778vw;
+    height: 2.778vw;
+    border-radius: 0.5vw;
+    border: 1px solid rgb(223, 223, 225);
+    text-align: center;
+    padding-top: 0.3vh;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#ze-pos-quotation-add-client-text {
+    font-size: var(--font-size-m-p-medium);
+    line-height: 1.181vw;
+    text-align: left;
+    vertical-align: center;
+    color: var(--brand-color-primary50);
+    padding-top: 1.1vh;
+    padding-left: 0.556vw;
+}
+
+#ze-pos-quotation-add-client-download-icon {
+    width: fit-content;
+    padding-top: 0.3vh;
+}
+
+#ze-pos-quotation-shopping-cart {
+    flex-grow: 1;
+    text-align: center;
+    height: 40vh;
+}
+
+#ze-pos-quotation-shopping-cart-item-image-space {
+    padding: 0 !important;
+    display: inline-block;
+}
+
+#ze-pos-quotation-shopping-cart-item-image {
+    width: 5.139vw;
+    height: 5.139vw;
+}
+
+#ze-pos-quotation-shopping-cart-item-detail {
+    width: 16.25vw;
+    height: 9.257vh;
+    margin-top: 2.923vh;
+    margin-left: 0.556vw;
+    padding: 0 !important;
+    display: inline-block;
+}
+
+#ze-pos-quotation-shopping-cart-item-title {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.111vw;
+    text-align: left;
+    vertical-align: center; 
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-quotation-shopping-cart-item-sku {
+    font-size: 1vw;
+    font-weight: 200;
+}
+
+#ze-pos-quotation-shopping-cart-info {
+    display: inline-flex;
+    width: fit-content;
+}
+
+#ze-pos-quotation-shopping-cart-modify-item,
+#ze-pos-quotation-shopping-cart-remove-item-icon,
+#ze-pos-quotation-shopping-cart-item-quantity,
+#ze-pos-quotation-shopping-cart-add-item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3vw;
+}
+
+#ze-pos-quotation-shopping-cart-modify-item {
+    padding: 0.2vw;
+    width: fit-content;
     border-radius: 0.5vw;
     border: 1px solid rgb(223, 223, 225);
 }
 
-#ze-pos-item-info {
-    height: fit-content;
+#ze-pos-quotation-shopping-cart-remove-item-icon,
+#ze-pos-quotation-shopping-cart-add-item-icon {
+    width: 2vw;
+    height: 2vh;
+    border-radius: 0.3vw;
+    border: 1px solid rgb(239,239,239);
 }
 
-#ze-pos-item-title {
-    color: #005CB9;
-    font-size: 1.3vw;
-    margin-top: 1vw;
+#ze-pos-quotation-shopping-cart-item-prices {
+    float: right;
+    justify-content: center;
+    align-items: center;
+}
+
+#ze-pos-quotation-shopping-cart-item-actual-price,
+#ze-pos-quotation-shopping-cart-item-discount-price {
+    display: inline-block;
+    font-size: 1.1vw;
+}
+
+#ze-pos-quotation-shopping-cart-delete-item-icon {
+    display: inline-block;
+}
+
+#ze-pos-quotation-shopping-cart-title {
+    font-size: 1.2vw;
     font-weight: 700;
+    padding-top: 1.7vw;
+    padding-left: 0.5vw;
+
 }
 
-#ze-pos-item-sku {
-    padding-right: 0 !important;
-    font-size: 1vw;
-    font-weight: 200;
+#ze-pos-quotation-shopping-cart-icon {
+    padding-top: 12vw;
+    padding-left: 9vw;
+    padding-right: 9vw;
+    padding-bottom: 2vw;
 }
 
-#ze-pos-item-availability {
-    padding-left: 0.4vw;
-    font-size: 1vw;
-    font-weight: 200;
+#ze-pos-quotation-shopping-cart-description p {
+    text-align: center;
 }
 
-#ze-pos-item-image {
-    transform:scale(0.6)
+#ze-pos-quotation-shopping-cart-ticket-icon-space {
+    text-align: center;
+    display: inline-block;
+    position: relative;
 }
 
-#ze-pos-item-actual-price,
-#ze-pos-item-disccount-price {
-    font-size: 1vw;
-    font-weight: 400;
+#ze-pos-quotation-shopping-cart-ticket-icon {
+    margin: 1.667vw;
+}
+
+#ze-pos-quotation-shopping-cart-subtotal {
+    position: absolute;
+    left: 4.5vw;
+    bottom: 13vw;
+}
+
+#ze-pos-quotation-shopping-cart-discounts {
+    position: absolute;
+    left: 4.5vw;
+    bottom: 11vw;
+}
+
+#ze-pos-quotation-shopping-cart-shipping {
+    position: absolute;
+    left: 4.5vw;
+    bottom: 9vw;
+}
+
+#ze-pos-quotation-shopping-cart-coupons {
+    position: absolute;
+    left: 4.5vw;
+    bottom: 6.5vw;
+}
+
+#ze-pos-quotation-shopping-cart-discount-amount {
+    text-align: right;
+}
+
+#ze-pos-quotation-shopping-cart-total {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.111vw;
+    text-align: right;
+    vertical-align: center; 
+    color: var(--brand-color-primary50);
+
+    position: absolute;
+    left: 4.5vw;
+    bottom: 2vw;
+}
+
+#ze-pos-quotation-shopping-cart-subtotal p,
+#ze-pos-quotation-shopping-cart-discounts p,
+#ze-pos-quotation-shopping-cart-shipping p,
+#ze-pos-quotation-shopping-cart-coupons p,
+#ze-pos-quotation-shopping-cart-total p {
+    display: inline-block;
+}
+
+.ze-pos-quotation-shopping-cart-description-text {
+    font-size: var(--font-size-medium);
+    line-height: 1.111vw;
+    text-align: left;
+    vertical-align: center; 
+    letter-spacing: 2%;
+    color: var(--brand-color-neutral500);
+}
+
+#ze-pos-quotation-shopping-cart-button-space {
+    text-align: center;
+}
+
+#ze-pos-quotation-shopping-cart-button {
+    width: 22.083vw;
+    height: 3.33vw;
+    position: relative;
+    margin: 1.667vw;
+    color: var(--brand-color-neutral50);
+    background-color: var(--brand-color-secondary300);
 }
 
 
-/* #ze-pos-quotation-search-form input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    width: 80%;
-    background: #fbfbfb;
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
 }
-  
-#ze-pos-quotation-search-form button {
-    float: left;
-    width: 100%;
-    padding: 10px;
-    background: #2196F3;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none; 
-    cursor: pointer;
-}
-
-#ze-pos-quotation-search-form button:hover {
-    background: #0b7dda;
-}
-
-#ze-pos-quotation-search-form::after {
-    content: "";
-    clear: both;
-    display: table;
-} */
