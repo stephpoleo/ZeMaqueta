@@ -1,20 +1,35 @@
 var wrap_category_list = document.getElementById("ze-pos-category-list");
                       
 var dynamicList = '';
-var categoryList = ['Colchones', 'Almohadas', 'Blancos', 'Muebles']
+var categoryList = ['Almohada', 
+                    'Almohadas Especializadas', 
+                    'Banca', 
+                    'Base de cama', 
+                    'Base Eléctrica', 
+                    'Bundles',
+                    'Cama con Cabecera',
+                    'Colchón para Bebé', 
+                    'Colchones', 
+                    'Cubre Colchón', 
+                    'Funda Colchón para Bebé', 
+                    'Funda de Almohada', 
+                    'Funda de Duvet', 
+                    'Gotero', 
+                    'Hard Shell', 
+                    'Juego de Sábanas', 
+                    'Mantas con peso', 
+                    'Mesa de Noche', 
+                    'Protector', 
+                    'Relleno de Duvet', 
+                    'RollOn', 
+                    'Sábanas', 
+                    'Services']
 
-for (var i = 0; i < 4; i++) {
+for (var i = 0; i < categoryList.length; i++) {
     dynamicList  += '<button id="ze-pos-category-button">' + categoryList[i] + '</button>';
 }
 
 wrap_category_list.innerHTML = dynamicList 
-
-var wrap_item_list = document.getElementById("ze-pos-item-list");
-var columns = 2;
-var rows = 3;
-var itemsAvailables = 4
-var actualPrice = 12000
-var disccountPrice = 5999
 
 var itemsMatrixDict = [
     [
@@ -23,9 +38,9 @@ var itemsMatrixDict = [
             brand:'Luuna',
             type:'Original',
             sku: 'LU1001',
-            availability: 5,
+            availability: 2,
             price: 16000,
-            disccount: 6999,
+            disccount: 0,
             img_source: './assets/product-image.png'
         }, 
         {
@@ -70,17 +85,6 @@ var itemsMatrixDict = [
             price: 31200,
             disccount: 13999,
             img_source: './assets/product-image.png'
-        }, 
-    
-        {
-            item_group:'Colchon',
-            brand:'Luuna',
-            type:'Basics 1',
-            sku: 'LU1001HB',
-            availability: 1,
-            price: 7400,
-            disccount: 4499,
-            img_source: './assets/product-image.png'
         }
     ],
 ];
@@ -91,12 +95,14 @@ itemGrid.className = 'container-fluid';
 for (var i = 0; i < itemsMatrixDict.length; ++i) {
     var columnItemGrid = document.createElement('div'); 
     columnItemGrid.id = 'ze-pos-item-grid-column';
-    columnItemGrid.className = 'col-sm-auto nopadding';
+    columnItemGrid.className = 'col nopadding';
     var itemDict = itemsMatrixDict[i];
     for (var j = 0; j < itemDict.length; ++j) {
-        var rowItemGrid = document.createElement('div');
-        rowItemGrid.id = 'ze-pos-item-grid-row';
-        rowItemGrid.className = "row";
+        var rowItemGrid = document.createElement('button');
+        rowItemGrid.id = 'ze-pos-item-'+i+'-'+j+'-grid-row';
+        rowItemGrid.className = "row ze-pos-item-grid-row";
+        rowItemGrid.setAttribute('onClick', 'addItemToCart(this.id)');
+
         var itemInfo = document.createElement('div');
         itemInfo.id = 'ze-pos-item-info';
         itemInfo.className = 'col-sm-7';
@@ -163,9 +169,19 @@ for (var i = 0; i < itemsMatrixDict.length; ++i) {
         itemInfo.append(rowItemPrices)
         rowItemGrid.append(itemInfo);
         rowItemGrid.append(itemImage);
+
         columnItemGrid.appendChild(rowItemGrid);
     }
     itemGrid.appendChild(columnItemGrid);
 }
 
 document.getElementById("ze-pos-items-grid").appendChild(itemGrid);
+
+/* function addItemToCart(item){
+    document.getElementById("ze-pos-quotation-empty-shopping-cart").style.display = "none"
+    document.getElementById("ze-pos-quotation-shopping-cart").style.display = "block"
+    document.getElementById("ze-pos-quotation-shopping-cart-button").style.display = "block"
+    selectedItem = document.getElementById(item);
+    document.getElementById("ze-pos-quotation-shopping-cart").innerHTML += selectedItem.innerHTML;
+    console.log(selectedItem.innerHTML)
+} */
