@@ -1,28 +1,28 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <!--Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Custom CSS file -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
     <!-- ZeSystem -->
     <link rel="stylesheet" type="text/css" href="https://dsyn6hjuj3z67.cloudfront.net/ZSLite-ze.css">
-  </head>
-  <body>
+</head>
+<body>
     <div class="container-fluid">
         <div class="row">
             <div id="ze-pos-quotation-main" class="col">
                 <section id="ze-pos-user-info">
-                    <p id="ze-pos-title-store">Luuna Masaryk<img id="ze-pos-edit-spacing" src = "./assets/edit-icon.svg" alt="editar tienda"/></p>
+                    <p id="ze-pos-title-store">{{ store }}<img id="ze-pos-edit-spacing" src = "../static/assets/edit-icon.svg" alt="editar tienda"/></p>
                     <p id="ze-pos-user-name">Clara Chia<span id="ze-pos-user-badge">Miembro</span></p>
                 </section>
                 
                 <section id="ze-pos-quick-access" class="row">
                     <div id="ze-pos-quick-access-icon"class="col-auto"> 
-                        <img src = "./assets/varita-accesos-rapidos.svg"/>
+                        <img src = "../static/assets/varita-accesos-rapidos.svg"/>
                     </div>
                     <div id="ze-pos-quick-access-text" class="col-sm-auto">Accesos rápidos</div>
                     <div class="row">
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="col-sm-3 d-flex justify-content-center"> 
                                     <div class="button-icon">
-                                        <img src = "./assets/simular-envio.svg"/>
+                                        <img src = "../static/assets/simular-envio.svg"/>
                                     </div>
                                 </div>
                             </button>
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="col-sm-3 d-flex justify-content-center"> 
                                     <div class="button-icon">
-                                        <img src = "./assets/promos-cupones.svg"/>
+                                        <img src = "../static/assets/promos-cupones.svg"/>
                                     </div>
                                 </div>
                             </button>
@@ -65,7 +65,7 @@
                     </div>
                 
                     <div id="ze-pos-quotation-search" class="col">
-                        <img id="ze-pos-quotation-search-icon" src="./assets/search-icon.svg"/>
+                        <img id="ze-pos-quotation-search-icon" src="../static/assets/search-icon.svg"/>
                         <input type="text" placeholder="Buscar item">
                     </div>
 
@@ -102,11 +102,11 @@
                                 <div class="row nopadding">
                                     <div id="ze-pos-quotation-modify-item-quatity" class="d-flex">
                                         <button id="ze-pos-quotation-remove-item-icon">
-                                            <img src="./assets/minus-icon.svg"/>
+                                            <img src="../static/assets/minus-icon.svg"/>
                                         </button>
                                         <div id="ze-pos-quotation-item-quantity" class="justify-content-center">1</div>
                                         <button id="ze-pos-quotation-add-item-icon">
-                                            <img src="./assets/plus-icon.svg"/>
+                                            <img src="../static/assets/plus-icon.svg"/>
                                         </button>
                                     </div>
                                     <div id="ze-pos-quotation-add-item-sell-info">
@@ -141,13 +141,13 @@
             <!-- <div id='ze-pos-quotation-add-client-and-shopping-cart' class="col-sm-3 overflow-scroll">
                 <section id="ze-pos-quotation-add-client" class="row justify-content-center">
                     <div id="ze-pos-quotation-add-client-user-icon" class="col-sm-2 justify-content-center">
-                        <img src = "./assets/user-client-icon.svg"/>
+                        <img src = "../static/assets/user-client-icon.svg"/>
                     </div>
                     <div id="ze-pos-quotation-add-client-text" class="col-sm-8">
                         Añadir cliente
                     </div>
                     <div id="ze-pos-quotation-add-client-download-icon" class="col-sm-2 justify-content-center">
-                        <img src = "./assets/download-quotation-icon.svg"/>
+                        <img src = "../static/assets/download-quotation-icon.svg"/>
                     </div>
                 </section>
                 <section id="ze-pos-quotation-empty-shopping-cart">
@@ -156,7 +156,7 @@
                     </div>
                     <div id="ze-pos-quotation-shopping-cart-space">
                         <div id="ze-pos-quotation-shopping-cart-icon">
-                            <img src = "./assets/empty-cart.svg"/>
+                            <img src = "../static/assets/empty-cart.svg"/>
                         </div>
                         <div id="ze-pos-quotation-shopping-cart-description">
                             <p>¡Listos para comprar!</p>
@@ -171,19 +171,19 @@
             <div id='ze-pos-quotation-add-client-and-shopping-cart' class="container-fluid nopadding overflow-scroll">
                 <section id="ze-pos-quotation-add-client" class="row justify-content-center">
                     <div id="ze-pos-quotation-add-client-user-icon" class="col-sm-auto justify-content-center">
-                        <img src = "./assets/user-client-icon.svg"/>
+                        <img src = "../static/assets/user-client-icon.svg"/>
                     </div>
                     <div id="ze-pos-quotation-add-client-text" class="col-sm-8">
                         Añadir cliente
                     </div>
                     <div id="ze-pos-quotation-add-client-download-icon" class="col-sm-2 justify-content-center">
-                        <img src = "./assets/download-quotation-icon.svg"/>
+                        <img src = "../static/assets/download-quotation-icon.svg"/>
                     </div>
                 </section>
                 <section>
                     <div id="ze-pos-quotation-shopping-cart">
                         <div id="ze-pos-quotation-shopping-cart-item-image-space" class="col">
-                            <img id="ze-pos-quotation-shopping-cart-item-image" src="./assets/product-image.png"/>
+                            <img id="ze-pos-quotation-shopping-cart-item-image" src="../static/assets/product-image.png"/>
                         </div>
                         <div id="ze-pos-quotation-shopping-cart-item-detail" class="col">
                             <p id="ze-pos-quotation-shopping-cart-item-title">
@@ -195,11 +195,11 @@
                             <section id="ze-pos-quotation-shopping-cart-info">
                                 <div id="ze-pos-quotation-shopping-cart-modify-item">
                                     <button id="ze-pos-quotation-shopping-cart-remove-item-icon">
-                                        <img src="./assets/minus-icon.svg"/>
+                                        <img src="../static/assets/minus-icon.svg"/>
                                     </button>
                                     <p id="ze-pos-quotation-shopping-cart-item-quantity">1</p>
                                     <button id="ze-pos-quotation-shopping-cart-add-item-icon">
-                                        <img src="./assets/plus-icon.svg"/>
+                                        <img src="../static/assets/plus-icon.svg"/>
                                     </button>
                                 </div>
                                 <div id="ze-pos-quotation-shopping-cart-item-prices">
@@ -209,13 +209,13 @@
                             </section>
                         </div>
                         <div id="ze-pos-quotation-shopping-cart-delete-item-icon" class="col nopadding">
-                            <img src="./assets/trash-item-icon.svg"/>
+                            <img src="../static/assets/trash-item-icon.svg"/>
                         </div>
                     </div>
                 </section>
                 <section class="row nopadding">
                     <div id="ze-pos-quotation-shopping-cart-ticket-icon-space">
-                        <img id="ze-pos-quotation-shopping-cart-ticket-icon" src="./assets/ticket-cart.svg"/>
+                        <img id="ze-pos-quotation-shopping-cart-ticket-icon" src="../static/assets/ticket-cart.svg"/>
                         <div id="ze-pos-quotation-shopping-cart-subtotal">
                             <p class="ze-pos-quotation-shopping-cart-description-text">Total del carrito</p>
                             <p id="ze-pos-quotation-shopping-cart-subtotal-amount">$16,000</p>
@@ -249,6 +249,6 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <script src="../static/js/app.js"></script>
   </body>
 </html>

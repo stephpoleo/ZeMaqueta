@@ -1,5 +1,5 @@
 var wrap_category_list = document.getElementById("ze-pos-category-list");
-                      
+
 var dynamicList = '';
 var categoryList = ['Almohada', 
                     'Almohadas Especializadas', 
@@ -41,7 +41,7 @@ var itemsMatrixDict = [
             availability: 2,
             price: 16000,
             disccount: 0,
-            img_source: './assets/product-image.png'
+            img_source: '../static/assets/product-image.png'
         }, 
         {
             item_group:'Colchon',
@@ -51,7 +51,7 @@ var itemsMatrixDict = [
             availability: 9,
             price: 31200,
             disccount: 13999,
-            img_source: './assets/product-image.png'
+            img_source: '../static/assets/product-image.png'
         }, 
         {
             item_group:'Colchon',
@@ -61,7 +61,7 @@ var itemsMatrixDict = [
             availability: 11,
             price: 12000,
             disccount: 5999,
-            img_source: './assets/product-image.png'
+            img_source: '../static/assets/product-image.png'
         }
     ],
     [
@@ -73,7 +73,7 @@ var itemsMatrixDict = [
             availability: 7,
             price: 16000,
             disccount: 6999,
-            img_source: './assets/product-image.png'
+            img_source: '../static/assets/product-image.png'
         }, 
     
         {
@@ -84,7 +84,7 @@ var itemsMatrixDict = [
             availability: 3,
             price: 31200,
             disccount: 13999,
-            img_source: './assets/product-image.png'
+            img_source: '../static/assets/product-image.png'
         }
     ],
 ];
@@ -224,7 +224,7 @@ function addItemToCart(item){
                 var itemValues = itemDict[key];
                 for (var j = 0; j < itemValues.length; ++j) {
                     if(key=='Tamaño Colchones/Bases/Blancos MX'){
-                        dynamicList += '<button type="submit" class="ze-pos-quitation-add-item-size-button"> <img class="ze-pos-add-item-size-icon" src="./assets/Check.svg"/> ' + itemValues[j] + '</button>';
+                        dynamicList += '<button type="submit" class="ze-pos-quitation-add-item-size-button"> <img class="ze-pos-add-item-size-icon" src="../static/assets/Check.svg"/> ' + itemValues[j] + '</button>';
                     }
                 }
             }
