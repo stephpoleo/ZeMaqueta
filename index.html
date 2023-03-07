@@ -64,36 +64,70 @@
                         </div>
                     </div>
                 
-                    <div id="ze-pos-quotation-search" class="col-sm-8">
+                    <div id="ze-pos-quotation-search" class="col">
                         <img id="ze-pos-quotation-search-icon" src="./assets/search-icon.svg"/>
                         <input type="text" placeholder="Buscar item">
                     </div>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
+                    <div class="modal fade" id="ze-pos-quotation-add-item-modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="row">
-                                    <div class="col-sm-11"></div>
-                                    <div class="col-sm-1">
-                                        <button type="button" class="row" data-bs-dismiss="modal">X
+                                    <div class="col-sm-10 nopadding"></div>
+                                    <div class="col-sm-2 nopadding">
+                                        <button id="ze-pos-quotation-add-item-modal-close-button" type="button" data-bs-dismiss="modal">x
                                         </button>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-12 text-center">
-                                        <h4>Buscar items</h4>
+                                    <div id="ze-pos-quotation-add-item-modal-header" class="col-sm-12 text-center"></div>
+                                </div>
+                                <div class="row ze-pos-quotation-add-item-category nopadding">
+                                    <div id="ze-pos-quotation-add-item-variant-name" class="col-sm-auto">
+                                        <p>Tamaño</p>
                                     </div>
                                 </div>
-                
-                                <div class="row text-center">
-                                    <div class="col-sm-6">
-                                        <img src = "./assets/search-icon.svg"/>
-                                        <input type="text" placeholder="Buscar item">
+                                <div id='ze-pos-quotation-add-item-size' class="row">
+                                    <div class="col-auto">
+                                        <div id="ze-pos-quotation-size-section-modal">
+                                        </div> 
                                     </div>
-                                    <div class="col-sm-6">
-                                        <button type="submit" class="btn-primary">Buscar items</button>
-                                    </div> 
+                                </div>
+                                <div class="row ze-pos-quotation-add-item-category">
+                                    <div class="col-sm-auto">
+                                        <p>Cantidad</p>
+                                    </div>
+                                </div>
+                                <div class="row nopadding">
+                                    <div id="ze-pos-quotation-modify-item-quatity" class="d-flex">
+                                        <button id="ze-pos-quotation-remove-item-icon">
+                                            <img src="./assets/minus-icon.svg"/>
+                                        </button>
+                                        <div id="ze-pos-quotation-item-quantity" class="justify-content-center">1</div>
+                                        <button id="ze-pos-quotation-add-item-icon">
+                                            <img src="./assets/plus-icon.svg"/>
+                                        </button>
+                                    </div>
+                                    <div id="ze-pos-quotation-add-item-sell-info">
+                                        <div id="ze-pos-quotation-add-item-sell-info-quatity">
+                                            Lleva 2 por solo
+                                        </div>
+                                        <div id="ze-pos-quotation-add-item-sell-info-price">
+                                            $18,179
+                                        </div>
+                                        <div id="ze-pos-quotation-add-item-sell-info-discount">
+                                            $9,999
+                                            <div id="ze-pos-quotation-add-item-sell-info-percentage">
+                                                -48%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-sm-12">
+                                        <button id="ze-pos-quotation-add-item-ti-cart-button" type="button" class="button-secondary">Agregar al carrito</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

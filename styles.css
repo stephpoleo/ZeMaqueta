@@ -191,11 +191,8 @@
 }
 
 #ze-pos-quotation-search {
-    width: fit-content;
-    height: 7vh;
-    border-radius: 0.5vw;
-    background-color: var(--brand-color-neutral50);
-    border: 1px solid var(--brand-color-neutral400);
+    margin-left: 3.5vw;
+    text-align: center;
     padding: 0 !important;
 }
 
@@ -212,7 +209,7 @@
     line-height: 1.111vw;
     text-align: center;
     color: var(--brand-color-neutral500);
-    width: 15vw;
+    width: 14vw;
 }
 
 #ze-pos-item-grid {
@@ -383,8 +380,7 @@
 }
 
 #ze-pos-quotation-shopping-cart-info {
-    display: inline-flex;
-    width: fit-content;
+    text-align: center;
 }
 
 #ze-pos-quotation-shopping-cart-modify-item,
@@ -395,6 +391,18 @@
     justify-content: center;
     align-items: center;
     margin: 0.3vw;
+}
+
+#ze-pos-quotation-shopping-cart-item-quantity {
+    width: 0.625vw;
+    height: 2.923vh;
+
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.111vw;
+    text-align: left;
+    color: var(--brand-color-primary50);
+
 }
 
 #ze-pos-quotation-shopping-cart-modify-item {
@@ -413,15 +421,52 @@
 }
 
 #ze-pos-quotation-shopping-cart-item-prices {
-    float: right;
     justify-content: center;
     align-items: center;
+    float: right;
+    text-align: center;
 }
 
 #ze-pos-quotation-shopping-cart-item-actual-price,
 #ze-pos-quotation-shopping-cart-item-discount-price {
     display: inline-block;
-    font-size: 1.1vw;
+}
+
+#ze-pos-quotation-shopping-cart-item-actual-price {
+    width: 3.681vw;
+    height: 1.948vh;
+
+    font-size: var(--font-size-medium);
+    line-height: 1.111vw;
+    text-align: left;
+    vertical-align: center; 
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 2%;
+    text-decoration-line: line-through;
+    color: var(--brand-color-neutral500);
+}
+
+#ze-pos-quotation-shopping-cart-item-discount-price {
+    width: 45px;
+    height: 16px;
+
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.111vw;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.02em;
+
+    color: var(--brand-color-primary50);
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 #ze-pos-quotation-shopping-cart-delete-item-icon {
@@ -528,6 +573,201 @@
     background-color: var(--brand-color-secondary300);
 }
 
+#ze-pos-quotation-add-item-modal {
+    width: 40.556vw;
+    max-width: 100%;
+    height: 53.472vw;
+    position: absolute;
+    left: 25%;
+    top: 5%;
+}
+
+#ze-pos-quotation-add-item-title {
+    font-size: var(--font-size-d-h4);
+    font-weight: var(--font-weight-bold);
+    line-height: 2.361vw;
+    text-align: center;
+    vertical-align: center; 
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-quotation-add-item-modal-sku-availability {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.111vw;
+    text-align: center;
+    vertical-align: center; 
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+}
+
+.ze-pos-quotation-add-item-category p{
+    font-size: var(--font-size-d-h6);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.667vw;
+    text-align: center;
+    vertical-align: center; 
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+
+    margin-top: 1.5vw;
+    padding-left: 5vw;
+}
+
+.ze-pos-quitation-add-item-tech-button {
+    font-size: var(--font-size-d-h6);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.667vw;
+    text-align: center;
+    vertical-align: center; 
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+    background-color: white;
+
+    border-radius: 1.111vw;
+    border: 1px solid var(--brand-color-neutral600);
+
+    width: 14vw;
+    padding: 1.8vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.ze-pos-quitation-add-item-tech-button p {
+    font-size: var(--font-size-m-p-small);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.389vw;
+    text-align: center;
+    vertical-align: center; 
+    letter-spacing: 2%;
+    color: var(--brand-color-neutral600);
+
+    padding-top: 0.3vw;
+}
+
+.ze-pos-quitation-add-item-tech-button:focus{
+    color: var(--brand-color-secondary300);
+    border-radius: 1.111vw;
+    border: 1px solid var(--brand-color-secondary300);
+}
+
+#ze-pos-quotation-add-item-size {
+    margin-left: 5vw;
+}
+
+.ze-pos-quitation-add-item-size-button {
+    font-size: var(--font-size-d-h6);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.667vw;
+    text-align: center;
+    vertical-align: center; 
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+    background-color: white;
+
+    border-radius: 1.111vw;
+    border: 1px solid var(--brand-color-neutral600);
+
+    width: fit-content;
+    padding: 1.5vw;
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+}
+
+.ze-pos-quitation-add-item-size-button:focus {
+    color: var(--brand-color-secondary300);
+    border-radius: 1.111vw;
+    border: 1px solid var(--brand-color-secondary300);
+}
+
+.ze-pos-quitation-add-item-size-button:focus ~ .ze-pos-add-item-size-icon{
+    display: none;
+}
+
+#ze-pos-quotation-modify-item-quatity {
+    margin-left: 5vw;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5vw;
+    border-radius: 0.3vw;
+    border: 1px solid rgb(239,239,239);
+}
+
+#ze-pos-quotation-remove-item-icon,
+#ze-pos-quotation-add-item-icon {
+    text-align: center;
+    width: 2.778vw;
+    height: 2.778vw;
+    border-radius: 0.3vw;
+    border: 1px solid rgb(239,239,239);
+}
+
+#ze-pos-quotation-item-quantity {
+    font-size: var(--font-size-m-h5);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.806vw;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+
+    margin-left: 1.042vw;
+    margin-right: 1.042vw;
+    padding-top: 0.5vw;
+    width: 0.764vw;
+}
+
+#ze-pos-quotation-add-item-sell-info {
+    width: 20.347vw;
+    margin-left: 0.5vw;
+    padding: 1.111vw 0.833vw;
+    background-color: var(--brand-color-neutral300);
+    border-radius: 0.556vw;
+    border: 1px solid var(--brand-color-neutral300);
+    text-align: center;
+}
+
+#ze-pos-quotation-add-item-sell-info-quatity,
+#ze-pos-quotation-add-item-sell-info-price,
+#ze-pos-quotation-add-item-sell-info-discount,
+#ze-pos-quotation-add-item-sell-info-percentage {
+    display: inline-block;
+    font-size: var(--font-size-m-p-small);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.806vw;
+    letter-spacing: 2%;
+    color: var(--brand-color-secondary50);
+}
+
+#ze-pos-quotation-add-item-sell-info-price {
+    text-decoration-line: line-through;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-quotation-add-item-sell-info-percentage {
+    background-color: #FFD7DB;
+    border-radius: 50%;
+    padding: 0.2vw;
+    border: 1px solid var(--brand-color-neutral300);
+}
+
+#ze-pos-quotation-add-item-modal-close-button {
+    margin-top: 1.667vw;
+    margin-left: 2.5vw;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid var(--brand-color-neutral300);
+}
+
+#ze-pos-quotation-add-item-ti-cart-button {
+    width: 30.556vw;
+    height: 3.33vw;
+    position: relative;
+    margin: 1.667vw;
+    color: var(--brand-color-neutral50);
+    background-color: var(--brand-color-secondary300);
+    padding: 0 !important;
+}
 
 .nopadding {
     padding: 0 !important;
