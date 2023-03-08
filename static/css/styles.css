@@ -666,30 +666,34 @@
     color: var(--brand-color-primary50);
     background-color: white;
 
-    border-radius: 1.111vw;
+    border-radius: 0.555vw;
     border: 1px solid var(--brand-color-neutral600);
 
     width: fit-content;
-    padding: 1.5vw;
+    padding: 1.948vh 1.5vw ;
     margin-right: 1vw;
     margin-bottom: 1vw;
 }
 
+.ze-pos-quitation-add-item-size-button img {
+    display: none;
+}
+
 .ze-pos-quitation-add-item-size-button:focus {
     color: var(--brand-color-secondary300);
-    border-radius: 1.111vw;
+    border-radius: 0.555vw;
     border: 1px solid var(--brand-color-secondary300);
 }
 
-.ze-pos-quitation-add-item-size-button:focus ~ .ze-pos-add-item-size-icon{
-    display: none;
+.ze-pos-quitation-add-item-size-button:focus img {
+    display: inline-block;
 }
 
 #ze-pos-quotation-modify-item-quatity {
     margin-left: 5vw;
     width: fit-content;
     height: fit-content;
-    padding: 0.5vw;
+    padding: 0.974vh;
     border-radius: 0.3vw;
     border: 1px solid rgb(239,239,239);
 }
@@ -718,8 +722,8 @@
 
 #ze-pos-quotation-add-item-sell-info {
     width: 20.347vw;
-    margin-left: 0.5vw;
-    padding: 1.111vw 0.833vw;
+    margin-left: 0.694vw;
+    padding: 2.436vh 0.833vw;
     background-color: var(--brand-color-neutral300);
     border-radius: 0.556vw;
     border: 1px solid var(--brand-color-neutral300);

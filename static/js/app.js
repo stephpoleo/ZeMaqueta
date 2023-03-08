@@ -89,35 +89,6 @@ var itemsMatrixDict = [
     ],
 ];
 
-var parentItemByCategoryList = {
-    'name': 'MX-LUU-FDU-SAT',
-    'internal_sku': 'SK2000',
-    'brand': 'LUUNA',
-    'country_of_origin': 'México',
-    'description': 'Funda de Duvet Satinada',
-    'has_variants': 1,
-    'item_code': 'MX-LUU-FDU-SAT',
-    'item_group': 'Funda de Duvet',
-    'item_name': 'Funda de Duvet Satinada',
-    'variant_based_on': 'Item Attribute',
-    'variants': {
-        'Color MX': [
-            'Blanco',
-            'Azul Marino'
-        ],
-        'Tamaño Colchones/Bases/Blancos MX': [
-            'Individual',
-            'Matrimonial',
-            'Matri/Queen',
-            'Queen',
-            'King',
-            'California King',
-            'Split King'
-        ]
-    },
-    'availability': 4
-};
-
 var itemGrid = document.createElement('div');
 itemGrid.id = 'ze-pos-item-grid';
 itemGrid.className = 'container-fluid';
@@ -130,7 +101,7 @@ for (var i = 0; i < itemsMatrixDict.length; ++i) {
         var rowItemGrid = document.createElement('button');
         rowItemGrid.id = 'ze-pos-item-'+i+'-'+j+'-grid-row';
         rowItemGrid.className = "row ze-pos-item-grid-row";
-        rowItemGrid.setAttribute('onClick', 'addItemToCart(parentItemByCategoryList)');
+        rowItemGrid.setAttribute('onClick', 'showAddItemModal()');
 
         var itemInfo = document.createElement('div');
         itemInfo.id = 'ze-pos-item-info';
@@ -206,33 +177,27 @@ for (var i = 0; i < itemsMatrixDict.length; ++i) {
 
 document.getElementById("ze-pos-items-grid").appendChild(itemGrid);
 
-function addItemToCart(item){
-    var wrap_modal_header_list = document.getElementById("ze-pos-quotation-add-item-modal-header");
-    var dynamicList = '';
-
-    dynamicList = '<h4 id="ze-pos-quotation-add-item-title">' + item['item_name'] + '</h4>';
-    dynamicList += '<p id="ze-pos-quotation-add-item-modal-sku-availability">' + item['item_code'] + ' - ' + item['availability'] + ' disponible en tienda</p>';
-    wrap_modal_header_list.innerHTML = dynamicList
-
-    var wrap_modal_body_list = document.getElementById("ze-pos-quotation-size-section-modal");
-    var dynamicList = '';
-
-    for(key in item){
-        if(typeof item[key]=='object') {
-            var itemDict = item[key];
-            for (key in itemDict) {
-                var itemValues = itemDict[key];
-                for (var j = 0; j < itemValues.length; ++j) {
-                    if(key=='Tamaño Colchones/Bases/Blancos MX'){
-                        dynamicList += '<button type="submit" class="ze-pos-quitation-add-item-size-button"> <img class="ze-pos-add-item-size-icon" src="../static/assets/Check.svg"/> ' + itemValues[j] + '</button>';
-                    }
-                }
-            }
-            wrap_modal_body_list.innerHTML = dynamicList
-        }
-    }
-
+function showAddItemModal(){
     const sonucModal= document.getElementById("ze-pos-quotation-add-item-modal");
     const modalEl = new bootstrap.Modal(sonucModal);
     modalEl.show();
+}
+
+function incrementItemQuantity(){
+    var value = parseInt(document.getElementById('ze-pos-quotation-item-quantity').innerText, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('ze-pos-quotation-item-quantity').innerText = value;
+}
+
+function decreaseItemQuantity(){
+    var value = parseInt(document.getElementById('ze-pos-quotation-item-quantity').innerText, 10);
+    value = isNaN(value) ? 0 : value;
+    value--;
+    if(value>1){
+        document.getElementById('ze-pos-quotation-item-quantity').innerText = value;
+    }
+    else{
+        document.getElementById('ze-pos-quotation-item-quantity').innerText = 1;
+    }
 }
