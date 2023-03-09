@@ -754,7 +754,7 @@
     border: 1px solid var(--brand-color-neutral300);
 }
 
-#ze-pos-quotation-add-item-modal-close-button {
+#ze-pos-quotation-modal-close-button {
     margin-top: 1.667vw;
     margin-left: 2.5vw;
     height: 25px;
@@ -771,6 +771,84 @@
     color: var(--brand-color-neutral50);
     background-color: var(--brand-color-secondary300);
     padding: 0 !important;
+}
+
+#ze-pos-quotation-change-store-modal {
+    width: 700px;
+    max-width: 100%;
+    height: 500px;
+    position: absolute;
+    left: 25%;
+    top: 5%;
+}
+
+#ze-pos-quotation-user-settings-space {
+    /* padding: 6.393vh 6.979vw; */
+    width: 432px;
+    padding-top: 64px;
+    padding-bottom: 32px;
+}
+
+#ze-pos-quotation-user-settings {
+    border-bottom: 1px ridge #231F20;
+    padding-bottom: 14px;
+}
+
+#ze-pos-quotation-store-settings {
+    padding-top: 14px;
+    padding-bottom: 20%;
+}
+
+.ze-pos-quotation-user-settings-icon {
+    /* width:  3.333vw;
+    height:  3.333vw; */
+    width:  4.5vw;
+    height:  4.5vw;
+    border-radius: 4.166vw;
+    border: 1px solid var(--brand-color-neutral300);
+    text-align: center;
+    vertical-align: center;
+    padding: 12px;
+    /* background-color: var(--brand-color-neutral300); */
+    background-color: #005CB9;
+}
+
+.ze-pos-quotation-user-settings-icon img {
+    /* width:  1.389vw;
+    height:  1.389vw; */
+    width:  2.8vw;
+    height:  2.8vw;
+}
+
+.ze-pos-quotation-user-store-info {
+    float: left;
+    padding-top: 12px;
+    padding-left: 16px;
+    padding-right: 80px;
+}
+
+.ze-pos-quotation-modify-settings {
+    padding: 14px 0;
+}
+
+.ze-pos-quotation-modify-settings button {
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+    width: 102px;
+    height: 40px;
+    float: right;
+}
+
+.ze-pos-quotation-modify-settings p {
+    color: #005CB9;
+}
+
+.ze-pos-quotation-user-store-name {
+    font-size: var(--font-size-m-h5);
+    font-weight: var(--font-weight-regular);
+    line-height: 20px;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
 }
 
 .nopadding {

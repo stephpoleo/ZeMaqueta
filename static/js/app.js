@@ -183,6 +183,13 @@ function showAddItemModal(){
     modalEl.show();
 }
 
+function showChangeStoreModal(){
+    const sonucModal= document.getElementById("ze-pos-quotation-change-store-modal");
+    const modalEl = new bootstrap.Modal(sonucModal);
+    modalEl.show();
+    console.log('hola')
+}
+
 function incrementItemQuantity(){
     var value = parseInt(document.getElementById('ze-pos-quotation-item-quantity').innerText, 10);
     value = isNaN(value) ? 0 : value;
@@ -203,6 +210,5 @@ function decreaseItemQuantity(){
 }
 
 function getInputValue(){
-    console.log('hola')
     console.log(document.getElementById("ze-pos-quitation-add-item-size-button").value)
 }
