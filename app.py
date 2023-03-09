@@ -27,7 +27,7 @@ def hello():
         },
         'availability': 4
     }
-    return render_template('modal.html', parent_item_category= parent_item_by_category_list)
+    return render_template('quotation_page_modals.html', parent_item_category= parent_item_by_category_list)
 
 
 if __name__ == "__main__":
