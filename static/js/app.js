@@ -201,3 +201,8 @@ function decreaseItemQuantity(){
         document.getElementById('ze-pos-quotation-item-quantity').innerText = 1;
     }
 }
+
+function getInputValue(){
+    console.log('hola')
+    console.log(document.getElementById("ze-pos-quitation-add-item-size-button").value)
+}

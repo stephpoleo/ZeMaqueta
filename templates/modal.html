@@ -25,9 +25,10 @@
             </div>
             <div id='ze-pos-quotation-add-item-size' class="row">
                 <div class="col-auto">
-                    <!-- input form -->
                     {% for variant_item_value in variants[variant] %}
-                        <button type="submit" class="ze-pos-quitation-add-item-size-button"> <img class="ze-pos-add-item-size-icon" src="../static/assets/Check.svg"/> {{ variant_item_value }} </button>
+                        <input type="button" id="ze-pos-quitation-add-item-size-button" class="ze-pos-quitation-add-item-size-button" value="{{ variant_item_value }}" onclick="getInputValue()">
+                            <img class="ze-pos-add-item-size-icon" src="../static/assets/Check.svg"/> 
+                        </input>
                     {% endfor %}
                 </div>
             </div>
