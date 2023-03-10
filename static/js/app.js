@@ -183,11 +183,20 @@ function showAddItemModal(){
     modalEl.show();
 }
 
+function showUserProfileSettingsModal(){
+    const sonucModal= document.getElementById("ze-pos-quotation-user-profile-settings-modal");
+    const modalEl = new bootstrap.Modal(sonucModal);
+    modalEl.show();
+}
+
 function showChangeStoreModal(){
+
+    const sonucModal2= document.getElementById("ze-pos-quotation-modal-close-button");
+    sonucModal2.click()
+
     const sonucModal= document.getElementById("ze-pos-quotation-change-store-modal");
     const modalEl = new bootstrap.Modal(sonucModal);
     modalEl.show();
-    console.log('hola')
 }
 
 function incrementItemQuantity(){
