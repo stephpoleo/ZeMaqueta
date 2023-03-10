@@ -183,6 +183,22 @@ function showAddItemModal(){
     modalEl.show();
 }
 
+function showUserProfileSettingsModal(){
+    const sonucModal= document.getElementById("ze-pos-quotation-user-profile-settings-modal");
+    const modalEl = new bootstrap.Modal(sonucModal);
+    modalEl.show();
+}
+
+function showChangeStoreModal(){
+
+    const sonucModal2= document.getElementById("ze-pos-quotation-modal-close-button");
+    sonucModal2.click()
+
+    const sonucModal= document.getElementById("ze-pos-quotation-change-store-modal");
+    const modalEl = new bootstrap.Modal(sonucModal);
+    modalEl.show();
+}
+
 function incrementItemQuantity(){
     var value = parseInt(document.getElementById('ze-pos-quotation-item-quantity').innerText, 10);
     value = isNaN(value) ? 0 : value;
@@ -200,4 +216,8 @@ function decreaseItemQuantity(){
     else{
         document.getElementById('ze-pos-quotation-item-quantity').innerText = 1;
     }
+}
+
+function getInputValue(){
+    console.log(document.getElementById("ze-pos-quitation-add-item-size-button").value)
 }

@@ -16,7 +16,13 @@
         <div class="row">
             <div id="ze-pos-quotation-main" class="col">
                 <section id="ze-pos-user-info">
-                    <p id="ze-pos-title-store">Luuna Masaryk<img id="ze-pos-edit-spacing" src = "../static/assets/edit-icon.svg" alt="editar tienda"/></p>
+                    <p id="ze-pos-title-store">
+                        Luuna Masaryk
+                        <img id="ze-pos-edit-spacing" src = "../static/assets/edit-icon.svg" alt="editar tienda" onclick="showUserProfileSettingsModal()"/>
+                    </p>
+                    <div class="modal fade" id="ze-pos-quotation-user-profile-settings-modal" tabindex="-1" role="dialog" data-mdb-backdrop="false">
+                        {% block modal_profile_settings %}{% endblock %}
+                    </div>
                     <p id="ze-pos-user-name">Clara Chia<span id="ze-pos-user-badge">Miembro</span></p>
                 </section>
                 
@@ -66,16 +72,11 @@
                 
                     <div id="ze-pos-quotation-search" class="col">
                         <img id="ze-pos-quotation-search-icon" src="../static/assets/search-icon.svg"/>
-                        <input type="text" placeholder="Buscar item">
+                        <input type=text onclick="location.href='/buscar_items'" placeholder="Buscar item">
                     </div>
 
-                    <!-- Modal -->
                     <div class="modal fade" id="ze-pos-quotation-add-item-modal" tabindex="-1" role="dialog">
-                        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                {% block modal_add_item %}{% endblock %}
-                            </div>
-                        </div>
+                        {% block modal_add_item %}{% endblock %}
                     </div>
                 </section>
                 

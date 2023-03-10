@@ -1,0 +1,136 @@
+{% extends 'index.html' %}
+
+{% block modal_add_item %}
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-sm-10 nopadding"></div>
+                <div class="col-sm-2 nopadding">
+                    <button id="ze-pos-quotation-modal-close-button" type="button" data-bs-dismiss="modal">x
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div id="ze-pos-quotation-modal-header" class="col-sm-12 text-center">
+                    <h4 id="ze-pos-quotation-add-item-title"> {{parent_item_category['item_name']}} </h4>
+                    <p id="ze-pos-quotation-add-item-modal-sku-availability"> {{parent_item_category['item_code']}} - {{parent_item_category['availability']}} disponible en tienda</p>
+                </div>
+            </div>
+            <div>
+                {% set variants = parent_item_category['variants'] %}
+                <form action="">
+                    {% for variant in variants %}
+                        <div class="row ze-pos-quotation-add-item-category nopadding">
+                            <div id="ze-pos-quotation-add-item-variant-name" class="col-sm-auto">
+                                <p>{{ variant }}</p>
+                            </div>
+                        </div>
+                        <div id='ze-pos-quotation-add-item-size' class="row">
+                            <div class="col-auto">
+                                {% for variant_item_value in variants[variant] %}
+                                    <input type="button" id="ze-pos-quitation-add-item-size-button" class="ze-pos-quitation-add-item-size-button" value="{{ variant_item_value }}" onclick="getInputValue()">
+                                        <img class="ze-pos-add-item-size-icon" src="../static/assets/Check.svg"/> 
+                                    </input>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </form>
+            </div>
+            <div class="row ze-pos-quotation-add-item-category">
+                <div class="col-sm-auto">
+                    <p>Cantidad</p>
+                </div>
+            </div>
+            <div class="row nopadding">
+                <div id="ze-pos-quotation-modify-item-quatity" class="d-flex">
+                    <button id="ze-pos-quotation-remove-item-icon" onclick="decreaseItemQuantity()">
+                        <img src="../static/assets/minus.svg"/>
+                    </button>
+                    <div id="ze-pos-quotation-item-quantity" class="justify-content-center">1</div>
+                    <button id="ze-pos-quotation-add-item-icon" onclick="incrementItemQuantity()">
+                        <img src="../static/assets/plus-icon.svg"/>
+                    </button>
+                </div>
+                <div id="ze-pos-quotation-add-item-sell-info">
+                    <div id="ze-pos-quotation-add-item-sell-info-quatity">
+                        Lleva 2 por solo
+                    </div>
+                    <div id="ze-pos-quotation-add-item-sell-info-price">
+                        $18,179
+                    </div>
+                    <div id="ze-pos-quotation-add-item-sell-info-discount">
+                        $9,999
+                        <div id="ze-pos-quotation-add-item-sell-info-percentage">
+                            -48%
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <button id="ze-pos-quotation-add-item-ti-cart-button" type="button" class="button-secondary">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block modal_profile_settings %}
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-sm-10 nopadding"></div>
+                <div class="col-sm-2 nopadding">
+                    <button id="ze-pos-quotation-modal-close-button" type="button" data-bs-dismiss="modal">x
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div id="ze-pos-quotation-modal-header" class="col-sm-12 text-center">
+                    <h4 id="ze-pos-quotation-add-item-title"> Opciones de cuenta </h4>
+                </div>
+            </div>
+            <div class="row justify-content-center nopadding">
+                <div id="ze-pos-quotation-user-settings-space" class="col-sm-auto">
+                    <section id="ze-pos-quotation-user-settings" class="row">
+                        <div class="col-sm-auto ze-pos-quotation-user-settings-icon">
+                            <img src = "../static/assets/person.svg"/>
+                        </div>
+                        <div id="ze-pos-quotation-user-store-info" class="col-sm-auto ze-pos-quotation-user-store-info">
+                            <div id="ze-pos-quotation-user-store-name" class="ze-pos-quotation-user-store-name">
+                                Clara Chia
+                            </div>
+                            <div id="ze-pos-quotation-user-store-detail" class="ze-pos-quotation-user-store-detail">
+                                Miembro de: Altabrisa
+                            </div>
+                        </div>
+                        <div id="ze-pos-quotation-modify-settings" class="col ze-pos-quotation-modify-settings">
+                            <button id="ze-pos-quotation-log-out-button">
+                                <a href="/logout" class="ze-pos-quotation-user-settings-link">Cerrar</a>
+                            </button>
+                        </div>
+                    </section>
+                    <section id="ze-pos-quotation-store-settings" class="row">
+                        <div class="col-sm-auto ze-pos-quotation-user-settings-icon">
+                            <img src = "../static/assets/storefront.svg"/>
+                        </div>
+                        <div id="ze-pos-quotation-user-store-info" class="col-sm-auto ze-pos-quotation-user-store-info">
+                            <div id="ze-pos-quotation-user-store-name" class="ze-pos-quotation-user-store-name">
+                                Luuna Masaryk
+                            </div>
+                            <div id="ze-pos-quotation-user-store-detail" class="ze-pos-quotation-user-store-detail">
+                                Tienda actual
+                            </div>
+                        </div>
+                        <div id="ze-pos-quotation-modify-settings" class="col ze-pos-quotation-modify-settings">
+                            <button id="ze-pos-quotation-change-store-button">
+                                <a href="/modal_cambiar_tienda" class="ze-pos-quotation-user-settings-link">Modificar</a>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

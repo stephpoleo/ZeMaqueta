@@ -27,7 +27,20 @@ def hello():
         },
         'availability': 4
     }
-    return render_template('modal.html', parent_item_category= parent_item_by_category_list)
+    return render_template('quotation_page_modals.html', parent_item_category= parent_item_by_category_list)
+
+@app.route('/modal_cambiar_tienda')
+def modal():
+    tienda_actual = 'Masaryk'
+    return render_template('quotation_page_change_store.html', tienda=tienda_actual)
+
+@app.route('/buscar_items')
+def search_items():
+    return render_template('quotation_page_change_items.html')
+
+@app.route('/logout')
+def logout():
+    return render_template('logout.html')
 
 
 if __name__ == "__main__":
