@@ -18,7 +18,7 @@
             </div>
             <div>
                 {% set variants = parent_item_category['variants'] %}
-                <form action="">
+                <form id="productDetailsForm" action="" onsubmit="getProductDetails()">
                     {% for variant in variants %}
                         <div class="row ze-pos-quotation-add-item-category nopadding">
                             <div id="ze-pos-quotation-add-item-variant-name" class="col-sm-auto">
@@ -28,9 +28,10 @@
                         <div id='ze-pos-quotation-add-item-size' class="row">
                             <div class="col-auto">
                                 {% for variant_item_value in variants[variant] %}
-                                    <input type="button" id="ze-pos-quitation-add-item-size-button" class="ze-pos-quitation-add-item-size-button" value="{{ variant_item_value }}" onclick="getInputValue()">
+                                    <button id="ze-pos-quitation-add-item-size-button" class="ze-pos-quitation-add-item-size-button">
                                         <img class="ze-pos-add-item-size-icon" src="../static/assets/Check.svg"/> 
-                                    </input>
+                                        {{ variant_item_value }}
+                                    </button>
                                 {% endfor %}
                             </div>
                         </div>
@@ -69,7 +70,7 @@
             </div>
             <div class="row text-center">
                 <div class="col-sm-12">
-                    <button id="ze-pos-quotation-add-item-ti-cart-button" type="button" class="button-secondary">Agregar al carrito</button>
+                    <button id="ze-pos-quotation-add-item-ti-cart-button" type="submit" form="productDetailsForm" class="button-secondary">Agregar al carrito</button>
                 </div>
             </div>
         </div>

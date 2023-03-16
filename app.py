@@ -38,6 +38,10 @@ def modal():
 def search_items():
     return render_template('quotation_page_change_items.html')
 
+@app.route('/quotation_detail')
+def show_quotation_items():
+    return render_template('quotation_details.html')
+
 @app.route('/logout')
 def logout():
     return render_template('logout.html')
