@@ -1,0 +1,83 @@
+
+<!-- saved from url=(0029)http://127.0.0.1:5001/payment -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments</title>
+    <link href="./Payments_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Payments_files/styles.css">
+    <link rel="stylesheet" type="text/css" href="./Payments_files/ZSLite-ze.css">
+    <link href="./Payments_files/icon" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="ze-pos-payment-previous-page">
+                <i class="material-icons">keyboard_backspace</i>
+                <p>Atrás</p>
+            </div>
+            <div id="ze-pos-payment-main" class="col-sm-10">
+                <div id="ze-pos-payment-options">
+                    <div id="ze-pos-payment-description-text">
+                        <h3>Elige los métodos de pago</h3>
+                        <p>Selecciona uno o más métodos elegidos por el cliente</p>
+                    </div>
+                    <div id="ze-pos-payment-tpv">
+                        <button>
+                            <i class="material-icons">contactless</i>
+                            <p>Cobrar con terminal</p>
+                        </button>
+                    </div>
+                    <div id="ze-pos-payment-methods">
+                        <div class="ze-pos-payment-method">
+                            <input type="checkbox" name="check" onclick="onlyOne(this)">
+                            <div>
+                                <i class="material-icons">payments</i>
+                                <p>Efectivo</p>
+                            </div>
+                        </div>
+                
+                        
+                            <div class="ze-pos-payment-method">
+                                <input type="checkbox" name="check" onclick="onlyOne(this)">
+                                <img src="./Payments_files/paypal-logo.png">
+                            </div>
+                        
+                            <div class="ze-pos-payment-method">
+                                <input type="checkbox" name="check" onclick="onlyOne(this)">
+                                <img src="./Payments_files/mercado-pago-logo.png">
+                            </div>
+                        
+                            <div class="ze-pos-payment-method">
+                                <input type="checkbox" name="check" onclick="onlyOne(this)">
+                                <img src="./Payments_files/clip-logo.png">
+                            </div>
+                        
+
+                        <div class="ze-pos-payment-method">
+                            <i class="material-icons">add_circle</i>
+                            <p>Ver más</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Monto a pagar</h3>
+                    <p>Monto a pagar con</p>
+                    <div id="ze-pos-payment-method-selected">
+                        Efectivo
+                    </div>
+                    <p>$6,999</p>
+                </div>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+    </div>
+    <script src="./Payments_files/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./Payments_files/app.js"></script>
+    <script src="./Payments_files/jspdf.debug.js"></script>
+    <script src="./Payments_files/jquery-1.11.0.min.js"></script>
+    <script src="./Payments_files/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body></html>

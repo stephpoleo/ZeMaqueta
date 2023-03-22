@@ -1,3 +1,4 @@
+from ze_pos_order import ZePOSOrder
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -27,7 +28,8 @@ def hello():
         },
         'availability': 4
     }
-    return render_template('quotation_page_modals.html', parent_item_category= parent_item_by_category_list)
+    order = ZePOSOrder('Tienda Luuna Masaryk', 'Marco Herrera', 'Marco Herrera', '1234', 'LUUNA 2022', 'México')
+    return render_template('quotation_page_modals.html', parent_item_category= parent_item_by_category_list, ze_pos_order = order)
 
 @app.route('/modal_cambiar_tienda')
 def modal():
@@ -40,11 +42,21 @@ def search_items():
 
 @app.route('/quotation_detail')
 def show_quotation_items():
-    return render_template('quotation_details.html')
+    order = ZePOSOrder('Tienda Luuna Masaryk', 'Marco Herrera', 'Marco Herrera', '1234', 'LUUNA 2022', 'México')
+    return render_template('quotation_details.html', ze_pos_order = order)
 
 @app.route('/logout')
 def logout():
     return render_template('logout.html')
+
+@app.route('/payment')
+def payment():
+    payment_methods = ['paypal-logo.png', 'mercado-pago-logo.png', 'clip-logo.png']
+    selected_payment_methods = {
+        'Efectivo': 900,
+        'Paypal': 7000
+    }
+    return render_template('payment_page.html', payment_methods= payment_methods, payment_methods_length= len(payment_methods), selected_methods= selected_payment_methods)
 
 
 if __name__ == "__main__":
