@@ -1,0 +1,594 @@
+#ze-pos-payment-previous-page {
+    margin-top: 0.9vh;
+    margin-left: var(--component-size-small);
+    margin-bottom: 1.4vh;
+}
+
+#ze-pos-payment-previous-page i {
+    display: inline-block;
+    font-size: var(--font-size-relative-h5);
+    margin-right: 1.2vh;
+}
+
+#ze-pos-payment-previous-page p {
+    display: inline-block;
+    margin-top: 1.4vh;
+    margin-bottom: 1.4vh;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-relative-p);
+    line-height: 1.9vh;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-payment-main {
+    margin-top: 1.4vh;
+    margin-left: var(--component-size-medium);
+    margin-right: var(--component-size-medium);
+    width: 79vh;
+}
+
+#ze-pos-payment-methods {
+    width: fit-content;
+    display: inline-block;
+}
+
+.ze-pos-payment-method {
+    margin-top: 2.9vh;
+    margin-right: 0.9vh;
+    margin-bottom: var(--component-size-small);
+    width: 15.7vh;
+    height: var(--component-size-large);
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid var(--brand-color-neutral400);
+    border-radius: 0.9vh;
+}
+
+.ze-pos-payment-method input{
+    display: inline-block;
+    width: 2vh;
+    height: 2.4vh;
+    margin-top: 2.6vh;
+    margin-left: 0.9vh;
+    margin-bottom: 2.6vh;
+    margin-right: 1.9vh;
+}
+
+.ze-pos-payment-method:has(input:checked) {
+    border: 1px solid var(--brand-color-secondary300);
+    border-radius: 0.9vh;
+}
+
+.ze-pos-payment-method img {
+    display: inline-block;
+    width: var(--img-size-width-xxlarge);
+    height: var(--img-size-height-small);
+    margin-right: 2.1vh;
+    margin-bottom: 2.5vh;
+}
+
+#ze-pos-payment-see-more-methods {
+    margin-top: 2.9vh;
+    margin-right: 0.9vh;
+    margin-bottom: var(--component-size-small);
+    width: var(--component-size-medium);
+    height: var(--component-size-large);
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid var(--brand-color-neutral400);
+    border-radius: 0.9vh;
+}
+
+#ze-pos-payment-see-more-methods i {
+    font-size: var(--font-size-relative-h4);
+    color: var(--brand-color-secondary300);
+}
+
+#ze-pos-payment-see-more-methods p {
+    margin: 0 !important;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-relative-h6);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: center;
+    color: var(--brand-color-secondary300);
+}
+
+#ze-pos-payment-method-total {
+    margin-bottom: var(--component-size-small);
+}
+
+#ze-pos-payment-method-total p {
+    margin-bottom: 2.9vh;
+}
+
+#ze-pos-payment-method-summary {
+    box-sizing: border-box;
+    height: var(--component-size-medium);
+    border: 1px solid var(--brand-color-neutral400);
+    border-radius: 0.9vh;
+}
+
+#ze-pos-payment-method-summary p {
+    display: inline-block;
+    margin-top: 2.4vh;
+    margin-left: 2.9vh;
+    margin-right: 0.9vh;
+    margin-bottom: 2.4vh;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.9vh;
+    align-items: center;
+    letter-spacing: 2%;
+    color:var(--brand-color-neutral600);
+}
+
+#ze-pos-payment-method-selected {
+
+    display: inline-block;
+    padding: 0.3vh 0.9vh;
+    background: var(--brand-color-tertiary50);
+    border-radius: var(--component-size-xlarge);
+}
+
+#ze-pos-payment-method-selected p {
+    margin: 0 !important;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-relative-h6);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: center;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-payment-method-amount {
+    float: right;
+    margin-right: 2.9vh;
+    margin-top: 1.7vh;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3vh 0.9vh;
+    border: 1px solid var(--brand-color-neutral400);
+    border-radius: 0.7vh;
+}
+
+#ze-pos-payment-method-amount p {
+    margin: 0 !important;
+}
+
+#ze-pos-payment-invoice {
+    margin-top: 2.9vh;
+    margin-bottom: var(--component-size-small);
+    box-sizing: border-box;
+    height: var(--component-size-xlarge);
+    border: 1px solid var(--brand-color-neutral400);
+    border-radius: 0.9vh;
+}
+
+#ze-pos-payment-invoice i {
+    display: inline-block;
+    color: var(--brand-color-secondary50);
+    font-size: var(--font-size-relative-h1);
+    margin-top: 3.4vh;
+    margin-left: 2.9vh;
+    margin-right: 1.9vh;
+}
+
+#ze-pos-payment-invoice p {
+    display: inline-block;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.9vh;
+    align-items: center;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-payment-invoice button {
+    float: right;
+    margin-right: 2.9vh;
+    margin-top: 2.6vh;
+    margin-bottom: 2.6vh;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    width: 13.1vh;
+    height: var(--component-size-xsmall);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1vh;
+    color: var(--brand-color-secondary300);
+    border: 1px solid var(--brand-color-neutral400);
+    border-radius: 0.9vh;
+    background-color: transparent;
+}
+
+#ze-pos-payment-description-text {
+    float: left;
+}
+
+.ze-pos-pyment-description-text-title {
+    margin-bottom: 0.9vh;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-relative-h3);
+    line-height: 2.9vh;   
+    align-items: center;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+}
+
+.ze-pos-pyment-description-text-subtitle {
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-relative-h4);
+    line-height: 1.9vh;
+    align-items: center;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50)
+}
+
+#ze-pos-payment-tpv {
+    float: right;
+}
+
+#ze-pos-payment-cash-method {
+    display: inline-block;
+    padding-bottom: 1vh;
+}
+
+#ze-pos-payment-cash-method i {
+    font-size: var(--font-size-relative-h4);
+    align-items: center;
+}
+
+#ze-pos-payment-cash-method p {
+    margin: 0 !important;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-relative-h6);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: center;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-payment-tpv button {
+    box-sizing: border-box;
+    border: 1px solid var(--color-neutral-400);
+    border-radius: 0.9vh;
+    background-color: transparent;
+}
+
+#ze-pos-payment-tpv i {
+    display: inline-block;
+    margin-right: 0.3vh;
+    color: var(--brand-color-secondary300);
+}
+
+#ze-pos-payment-tpv p {
+    margin: 0 !important;
+    display: inline-block;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-relative-h6);
+    line-height: 1.9vh;
+    letter-spacing: 0.1vh;
+    color: var(--brand-color-secondary300);
+}
+
+#ze-pos-payment-order-overview-main {
+    width: 44.5vh;
+    height: 78vh;
+    background: var(--brand-color-neutral50);
+    border-radius: 1.9vh;
+}
+
+#ze-pos-payment-lead-information {
+    margin-left: 2.9vh;
+    margin-right: 2.9vh;
+    border-bottom: 1px ridge var(--brand-color-neutral400);
+}
+
+#ze-pos-payment-lead-icon {
+    box-sizing: border-box;
+    margin-top: 2.9vh;
+    margin-bottom: 1.4vh;
+    display: inline-block;
+    color: var(--brand-color-secondary300);
+    border: 1px solid var(--brand-color-neutral300);
+    border-radius: 6px;
+}
+
+#ze-pos-payment-lead-name-and-credits {
+    display: inline-block;
+    margin-left: 0.9vh;
+    margin-top: 2.9vh;
+}
+
+#ze-pos-payment-lead-name {
+    margin-bottom: 0.7vh;
+    font-weight: 500;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.1vw;
+    align-items: center;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-payment-lead-credits {
+    font-weight: 500;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.1vw;
+    align-items: center;
+    color: var(--brand-color-neutral500);
+}
+
+#ze-pos-payment-use-credit {
+    float: right;
+    margin-top: var(--component-size-xsmall);
+    margin-bottom: 1.4vh;
+}
+
+#ze-pos-payment-use-credit button {
+    padding: 1.4vh;
+    border: 1px solid var(--brand-color-neutral300);
+    border-radius: 0.4vh;
+    background-color: transparent;
+}
+
+#ze-pos-payment-use-credit p {
+    margin: 0 !important;
+    font-weight: 500;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.08vw;
+    color: var(--brand-color-secondary300);
+}
+
+#ze-pos-payment-contact-information {
+    margin-top: 2.9vh;
+    margin-left: 2.9vh;
+    margin-right: 2.9vh;
+    border-bottom: 1px ridge var(--brand-color-neutral400);
+}
+
+#ze-pos-payment-contact-information-text {
+    display: inline-block;
+    width: fit-content;
+}
+
+#ze-pos-payment-contact-information-text p {
+    font-weight: 400;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.3vw;
+    letter-spacing: 2%;
+    color: var(--brand-color-neutral600);
+}
+
+#ze-pos-payment-order-overview-title {
+    margin-bottom: 2.9vh;
+    font-weight: 700;
+    font-size: var(--font-size-relative-h3);
+    line-height: 2.9vh;
+    align-items: center;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-contact-information-icon {
+    float: right;
+    width: fit-content;
+    margin-top: var(--component-size-large);
+}
+
+#ze-pos-contact-information-icon p {
+    margin: 0 !important;
+    display: inline-block;
+    font-weight: 500;
+    font-size: var(--font-size-relative-h6);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: center;
+    color: var(--brand-color-secondary300);
+
+}
+
+#ze-pos-contact-information-icon i {
+    display: inline-block;
+    font-size: var(--font-size-relative-h6);
+    color: var(--brand-color-secondary300);
+}
+
+#ze-pos-payment-shipping-information {
+    margin-top: 2.9vh;
+    margin-left: 2.9vh;
+    margin-right: 2.9vh;
+    border-bottom: 1px ridge var(--brand-color-neutral400);
+}
+
+#ze-pos-payment-shipping-text {
+    display: inline-block;
+}
+
+#ze-pos-payment-shipping-text span{
+    font-weight: 600;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.38vw;
+    letter-spacing: 2%;
+    color: var(--brand-color-neutral600);
+}
+
+#ze-pos-payment-shipping-text p{
+    margin: 0 !important;
+    font-weight: 400;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.38vw;
+    letter-spacing: 2%;
+    color: var(--brand-color-neutral600);
+}
+
+#ze-pos-payment-cart-items {
+    margin-top: 2.9vh;
+    margin-left: 2.9vh;
+    margin-right: 2.9vh;
+    border-bottom: 1px ridge var(--brand-color-neutral400);
+}
+
+#ze-pos-payment-item-quatity-and-name {
+    display: inline-block;
+    margin-bottom: 2.9vh;
+}
+
+#ze-pos-payment-item-quatity-and-name p{
+    margin: 0 !important;
+    font-weight: 400;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.1vw;
+    align-items: center;
+    letter-spacing: 2%;
+    color: var(--brand-color-neutral600);
+}
+
+#ze-pos-payment-item-price {
+    float: right;
+}
+
+#ze-pos-payment-item-price p {
+    font-weight: 400;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.1vw;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-payment-cart-total {
+    margin-top: 2.9vh;
+    margin-left: 2.9vh;
+    margin-right: 2.9vh;
+    border-bottom: 1px ridge var(--brand-color-neutral400);
+}
+
+.ze-pos-payment-cart-description-amount {
+    display: inline-block;
+}
+
+.ze-pos-payment-cart-description-amount p {
+    margin-bottom: 1.9vh;
+    font-weight: 400;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.9vh;
+    align-items: center;
+    letter-spacing: 2%;
+    color: var(--brand-color-neutral600);
+}
+
+#ze-pos-payment-cart-total-amount {
+    float: right;
+}
+
+#ze-pos-payment-cart-total-amount p {
+    font-weight: 400;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+
+}
+
+#ze-pos-payment-cart-discount {
+    float: right;
+}
+
+#ze-pos-payment-cart-discount p {
+    font-weight: 400;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 2%;
+    color: var(--brand-color-secondary50);
+}
+
+#ze-pos-payment-cart-shipping {
+    float: right;
+}
+
+#ze-pos-payment-cart-shipping p {
+    font-weight: 400;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-payment-total {
+    margin-left: 2.9vh;
+    margin-right: 2.9vh;
+}
+
+#ze-pos-payment-total-text {
+    display: inline-block;
+}
+
+#ze-pos-payment-total-text p {
+    font-weight: 500;
+    font-size: var(--font-size-relative-h4);
+    line-height: 1.9vh;
+    align-items: center;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-payment-total-amount {
+    float: right;
+}
+
+#ze-pos-payment-total-amount p {
+    font-weight: 700;
+    font-size: var(--font-size-relative-h4);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 2%;
+    color: var(--brand-color-primary50);
+}
+
+#ze-pos-payment-register {
+    text-align: center;
+}
+
+#ze-pos-payment-register button {
+    padding: 1.9vh 13.6vh;
+    background: var(--brand-color-secondary300);
+    border-radius: 0.9vh;
+}
+
+#ze-pos-payment-register p {
+    margin: 0 !important;
+    font-weight: 500;
+    font-size: var(--font-size-relative-h5);
+    line-height: 1.9vh;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1vh;
+    color: var(--brand-color-neutral50);
+}
+
+body {
+    background-color:#E1E1E1;
+}
+
+ul {
+    margin-left: 17px;
+    margin-bottom: 24px;
+    padding: 0;
+  }
