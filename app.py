@@ -56,7 +56,31 @@ def payment():
         'Efectivo': 900,
         'Paypal': 7000
     }
-    return render_template('payment_page.html', payment_methods= payment_methods, payment_methods_length= len(payment_methods), selected_methods= selected_payment_methods)
+    available_credits = {
+        'credit_used': 400.0,
+        'credit_converted': 400.0,
+    }
+
+    lead_details = {
+        'name': 'Lionel Messi-liomessi@gmail.com',
+        'country': 'Mexico',
+        'email_id': 'liomessi@gmail.com',
+        'lead_name': 'Lionel Messi',
+        'mobile_no': None,
+        'origin_from': 'POS',
+        'phone': '5512345678',
+        'status': 'Converted',
+        'successful_sales_counter': '0',
+        'addresses': ['CALLE DARWIN 78, 11590-Shipping',
+                      'VALLE SOLEADO 100 23, 42086-Shipping']
+    }
+
+    return render_template('payment_page.html', 
+                            payment_methods= payment_methods, 
+                            payment_methods_length= len(payment_methods), 
+                            selected_methods= selected_payment_methods, 
+                            lead= lead_details,
+                            credits= available_credits)
 
 
 if __name__ == "__main__":
