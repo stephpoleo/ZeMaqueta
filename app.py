@@ -82,6 +82,15 @@ def payment():
                             lead= lead_details,
                             credits= available_credits)
 
+@app.route('/wholesales_channels')
+def channel_list():
+    channels = [
+      { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'},
+      { 'id': 'sears', 'name': 'Sears', 'description': 'Empresa tiendas departamentales y servicios básicos de reparación de automóviles.', 'image': '../static/assets/wholesale/sears_icon.webp'},
+      { 'id': 'sams', 'name': "Sam's Club", 'description': 'Tienda de autoservicio con ventas del mayoreo y medio mayoreo mediante membresía.', 'image': '../static/assets/wholesale/sams_icon.webp'}
+      ]
+    return render_template('channel_list.html', channels=channels)
+
 
 if __name__ == "__main__":
     app.run(host ='0.0.0.0', port = 5001, debug = True)
