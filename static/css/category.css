@@ -1,0 +1,45 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+  gap: 24px;
+  height: fit-content;
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.dashboard-container {
+  background-color: var(--brand-color-gray50, #fff);
+  padding: 16px;
+  border-radius: var(--border-radius-md, "8px");
+  height: 400px;
+}
+
+.dashboard-title-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--brand-color-gray400, #d9d9d9);
+  padding-bottom: 16px;
+}
+
+.dashboard-icon-conainer {
+  border-radius: var(--brand-radius-medium, 8px);
+  border: 1px solid var(--brand-color-gray300, #eee);
+  padding: 4px 6px;
+}
+
+.dashboard-icon {
+  filter: invert(21%) sepia(98%) saturate(1935%) hue-rotate(197deg)
+    brightness(94%) contrast(101%);
+}
+
+.dashboard-title {
+  margin: 0px;
+  font-size: var(--font-size-relative-h4, 1rem);
+  font-weight: var(--font-weight-medium, 500);
+  font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+}

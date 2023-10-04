@@ -91,6 +91,16 @@ def channel_list():
       ]
     return render_template('channel_list.html', channels=channels)
 
+@app.route('/wholesales_categories')
+def category_list():
+    categories = [
+      { 'id': 'PO y Carga Automatizada', 'name': 'PO y Carga Automatizada', 'description': 'Descripción', 'icon': 'upload_file'},
+      { 'id': 'Simulación de Movimientos y Disponibilidad de Inventario.', 'name': 'Simulación de Movimientos y Disponibilidad de Inventario.', 'description': 'Descripción', 'icon': 'inventory'},
+      { 'id': 'Conciliación de Remisiones', 'name': "Conciliación de Remisiones", 'description': 'Descripción', 'icon': 'package_2'}
+      ]
+    channel = { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'}
+    return render_template('category_list.html', categories=categories, channel=channel)
+
 
 if __name__ == "__main__":
     app.run(host ='0.0.0.0', port = 5001, debug = True)

@@ -22,6 +22,7 @@ body {
   margin: 0;
   padding: 0px 16px;
   max-width: 1290px;
+  height: 100%;
 }
 
 .title-container {
@@ -39,13 +40,6 @@ body {
   margin: 0;
   font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
   font-size: var(--font-size-relative-h2, 1.5rem);
-}
-
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 10px;
-  gap: 24px;
 }
 
 .card-button {
@@ -86,4 +80,42 @@ body {
   flex-direction: column;
   text-align: start;
   gap: 8px;
+}
+
+.card-icon {
+  font-size: 32px !important;
+  filter: invert(21%) sepia(98%) saturate(1935%) hue-rotate(197deg)
+    brightness(94%) contrast(101%);
+}
+
+.back-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: var(--brand-color-primary50, "#231f20");
+  width: fit-content;
+}
+
+.back-icon {
+  font-size: 14px !important;
+}
+
+.back-title {
+  margin: 0;
+  font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+  font-size: var(--font-size-d-p-regular, 16px);
+}
+
+.title-back-container {
+  padding-top: 32px;
+}
+
+.title-image {
+  float: left;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  margin-right: 8px;
 }
