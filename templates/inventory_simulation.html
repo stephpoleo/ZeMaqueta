@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wholesale inventory simulation</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://d2hv74jzbyxag7.cloudfront.net/ZSLite-ze.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="stylesheet" href="../static/css/simulation.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <style>
+      :root {
+        --border-radius-sm: 4px;
+        --border-radius: 6px;
+        --border-radius-md: 8px;
+        --border-radius-lg: 12px;
+        --border-radius-full: 999px;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .wholesales-tools-title {
+        margin: 0;
+        font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+        font-size: var(--font-size-relative-h1, 1.5rem);
+      }
+
+      body {
+        background: #f9fafa;
+        display: block;
+        margin: 0;
+        padding: 0px 2vw;
+        max-width: 1290px;
+        height: 100%;
+      }
+
+      .wholesales-tools-back-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 4vh;
+        text-decoration: none;
+        color: var(--brand-color-primary50, "#231f20");
+        width: fit-content;
+      }
+
+      .wholesales-tools-back-icon {
+        font-size: 14px !important;
+      }
+
+      .wholesales-tools-back-title {
+        margin: 0;
+        font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+        font-size: var(--font-size-d-p-regular, 16px);
+      }
+
+      .wholesales-tools-title-back-container {
+        padding-top: 4vh;
+      }
+
+      .wholesales-tools-title-image {
+        float: left;
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        margin-right: 1vw;
+      }
+
+      .wholesales-tools-purchase-order {
+        margin: 0px;
+        width: 8vw;
+        font-size: var(--font-size-relative-h4, 1rem);
+        font-weight: var(--font-weight-medium, 500);
+        font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+      }
+
+      .wholesales-tools-order-date {
+        font-size: var(--font-size-d-p-medium, 14px);
+        font-weight: var(--font-weight-regular, 500);
+        font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+      }
+
+      .wholesales-tools-order-info {
+        display: flex;
+        gap: 5vh;
+        align-items: center;
+      }
+
+      .wholesales-tools-order-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      #wholesales-tools-accordion-button:focus {
+        background-color: var(--brand-color-neutral50, #ffffff);
+        color: var(--brand-color-secondary300, #005cb9);
+      }
+
+      #wholesales-tools-accordion-button:not(.collapsed) {
+        background-color: var(--brand-color-neutral50, #ffffff);
+        color: var(--brand-color-secondary300, #005cb9);
+      }
+
+      #wholesales-tools-accordion-button:focus,
+      #wholesales-tools-accordion-button:active {
+        outline: none !important;
+        box-shadow: none;
+      }
+
+      .wholesales-tools-button {
+        padding: 1.4vh 2vh;
+        margin-top: 1vh;
+        margin-right: 3vh;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        background: transparent;
+        border: 1px solid var(--brand-color-gray400, #d9d9d9);
+        border-radius: var(--brand-radius-small, 4px);
+        background-color: var(--brand-color-neutral50, #ffffff);
+        color: var(--brand-color-secondary300, #005cb9);
+        font-size: var(--font-size-m-p-small, 14px);
+      }
+
+      .wholesales-tools-status {
+        padding: 1vh 1vw;
+        border-radius: var(--brand-radius-small, 4px);
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+      }
+
+      .wholesales-tools-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        display: block;
+      }
+
+      .wholesales-tools-dot-danger {
+        background-color: #e24c4c;
+      }
+
+      .wholesales-tools-dot-success {
+        background-color: #2d9e58;
+      }
+
+      .wholesales-tools-dot-warning {
+        background-color: #f9814e;
+      }
+
+      .wholesales-tools-dot-info {
+        background-color: #1f6eb5;
+      }
+
+      .wholesales-tools-status-danger {
+        background-color: #fef4f5;
+        color: #e24c4c;
+        font-size: var(--font-size-m-p-small, 14px);
+      }
+
+      .wholesales-tools-status-success {
+        background-color: #eaf5ed;
+        color: #2d9e58;
+        font-size: var(--font-size-m-p-small, 14px);
+      }
+
+      .wholesales-tools-status-warning {
+        background-color: #fef5f0;
+        color: #f9814e;
+        font-size: var(--font-size-m-p-small, 14px);
+      }
+
+      .wholesales-tools-status-info {
+        background-color: #d8fbfe;
+        color: #1f6eb5;
+        font-size: var(--font-size-m-p-small, 14px);
+      }
+
+      #table > thead > tr > th {
+        border-bottom-color: var(--brand-color-secondary300, #005cb9);
+        font-family: var(--brand-typography-font2, "Helvetica Neue");
+      }
+    </style>
+    <div class="wholesales-tools-title-back-container">
+      <a href="/wholesales_categories" class="wholesales-tools-back-container">
+        <span class="material-symbols-outlined back-icon">
+          arrow_back_ios
+        </span>
+        <span class="wholesales-tools-back-title">Regresar</span>
+      </a>
+      <img
+        class="wholesales-tools-title-image"
+        src="{{channel.image}}"
+        alt="{{channel.id}}"
+      />
+      <h1 class="wholesales-tools-title">
+        {{channel.name}} - {{category.name}}
+      </h1>
+    </div>
+
+    <div class="accordion accordion-flush mt-4" id="orders">
+      {% for channel_request_monitor in channel_request_monitor_list %}
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <div
+            id="wholesales-tools-accordion-button"
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse{{loop.index}}"
+            aria-expanded="false"
+            aria-controls="example"
+          >
+            <div class="wholesales-tools-order-header">
+              <div class="wholesales-tools-order-info">
+                <h4 class="wholesales-tools-purchase-order">
+                  {{channel_request_monitor.name}}
+                </h4>
+                <span class="wholesales-tools-order-date"
+                  >{{channel_request_monitor.date}}</span
+                >
+                {% if channel_request_monitor.status in status_dictionary %}
+                <div
+                  class="wholesales-tools-status wholesales-tools-status-{{status_dictionary[channel_request_monitor.status]}}"
+                >
+                  <span
+                    class="wholesales-tools-dot wholesales-tools-dot-{{status_dictionary[channel_request_monitor.status]}}"
+                  ></span
+                  ><span>{{channel_request_monitor.status}}</span>
+                </div>
+                {% endif %}
+              </div>
+              <div class="id">
+                <button class="wholesales-tools-button">
+                  Partial approval
+                </button>
+                <button class="wholesales-tools-button">Approval</button>
+              </div>
+            </div>
+          </div>
+        </h2>
+        <div
+          id="collapse{{loop.index}}"
+          class="accordion-collapse collapse"
+          data-bs-parent="#orders"
+        >
+          <div class="accordion-body">
+            <table class="table" id="table">
+              <thead>
+                <tr>
+                  <th scope="col">SKU</th>
+                  <th scope="col">Cantidad PO</th>
+                  <th scope="col">Cantidad real</th>
+                  <th scope="col">Comprometido</th>
+                  <th scope="col">Stock final</th>
+                  <th scope="col">Fecha</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for channel_request_monitor_item in
+                channel_request_monitor_items %}
+                <tr>
+                  <th scope="row">{{channel_request_monitor_item.sku}}</th>
+                  <td>{{channel_request_monitor_item.qty_po}}</td>
+                  <td>{{channel_request_monitor_item.qty_current}}</td>
+                  <td>{{channel_request_monitor_item.qty_compromised}}</td>
+                  <td>{{channel_request_monitor_item.stock}}</td>
+                  <td>{{channel_request_monitor_item.date}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

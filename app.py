@@ -101,6 +101,66 @@ def category_list():
     channel = { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'}
     return render_template('category_list.html', categories=categories, channel=channel)
 
+@app.route('/inventory_simulation')
+def inventory_simulation():
+    category = { 'id': 'Simulación de Movimientos y Disponibilidad de Inventario.', 'name': 'Simulación de Movimientos y Disponibilidad de Inventario.', 'description': 'Descripción', 'icon': 'inventory'}
+    channel = { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'}
+    channel_request_monitor_list = [{
+      'id': 1,
+      'name': 'P.O. 123',
+      'date': '24/11/2023',
+      'status': 'Overdue'
+    }, {
+      'id': 2,
+      'name': 'P.O. 2345',
+      'date': '23/03/2023',
+      'status': 'To Deliver',
+    }, {
+      'id': 3,
+      'name': 'P.O. 3456',
+      'date': '09/02/2023',
+      'status': 'On Time',
+    },{
+      'id': 3,
+      'name': 'P.O. 3456',
+      'date': '09/02/2023',
+      'status': 'Completed',
+    }]
+    status_dictionary = {
+      'Overdue': 'danger',
+      'To Deliver': 'warning',
+      'On Time': 'success',
+      'Completed': 'info'
+    }
+    channel_request_monitor_items = [{
+      'sku': 'SKU 123',
+      'qty_po': 300,
+      'qty_current': 100,
+      'qty_compromised': 10,
+      'stock': -210,
+      'date': '04/12/2023'
+    }, {
+      'sku': 'SKU 234',
+      'qty_po': 200,
+      'qty_current': 100,
+      'qty_compromised': 20,
+      'stock': -120,
+      'date': '15/04/2023'
+    }, {
+      'sku': 'SKU 123',
+      'qty_po': 500,
+      'qty_current': 800,
+      'qty_compromised': 10,
+      'stock': 290,
+      'date': '09/05/2023'
+    }]
+    return render_template('inventory_simulation.html', 
+                            category=category, 
+                            channel=channel, 
+                            channel_request_monitor_list=channel_request_monitor_list, 
+                            status_dictionary=status_dictionary,
+                            channel_request_monitor_items=channel_request_monitor_items)
+
 
 if __name__ == "__main__":
     app.run(host ='0.0.0.0', port = 5001, debug = True)
