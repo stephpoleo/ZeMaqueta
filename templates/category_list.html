@@ -52,8 +52,6 @@
       }
 
       .wholesale-tools-category-container {
-        display: grid;
-        grid-template-columns: 70% 30%;
       }
 
       .wholesale-tools-card-container {
@@ -107,7 +105,8 @@
         background-color: var(--brand-color-gray50, #fff);
         padding: 16px;
         border-radius: var(--border-radius-md, "8px");
-        height: fit-content;
+        height: calc(100%-2vh);
+        margin-top: 2vh;
       }
 
       .wholesale-tools-wholesale-tools-dashboard-title-container {
@@ -378,158 +377,182 @@
       .wholesale-tools-chart {
         margin: 2vh 0px;
       }
+
+      .wholesale-tools-container {
+        display: grid;
+        grid-template-columns: 70% 30%;
+      }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
-    <div class="wholesale-tools-title-back-container">
-      <a href="/wholesales_channels" class="back-container">
-        <span class="material-symbols-outlined wholesale-tools-back-icon">
-          arrow_back_ios
-        </span>
-        <span class="wholesale-tools-back-title">Regresar</span>
-      </a>
-      <img
-        class="wholesale-tools-title-image"
-        src="{{channel.image}}"
-        alt="{{channel.id}}"
-      />
-    </div>
-
-    <div class="wholesale-tools-subtitle-container">
-      <span class="material-symbols-outlined"> dashboard </span>
-      <h2 class="subtitle">Categorías</h2>
-    </div>
-
-    <div class="wholesale-tools-category-container">
-      <div class="wholesales-tools-side-container">
-        <div class="wholesale-tools-card-container">
-          {% for category in categories %}
-          <button
-            class="wholesale-tools-card-button"
-            onclick="{{category.action}}(this.value)"
-          >
-            <div>
-              <span class="wholesale-tools-card-icon material-symbols-outlined">
-                {{category.icon}}
-              </span>
-            </div>
-            <div
-              class="wholesale-tools-wholesale-tools-card-description-container"
-            >
-              <p class="wholesale-tools-card-title">{{category.name}}</p>
-            </div>
-          </button>
-          {% endfor %}
+    <div class="wholesale-tools-container">
+      <div>
+        <div class="wholesale-tools-title-back-container">
+          <a href="/wholesales_channels" class="back-container">
+            <span class="material-symbols-outlined wholesale-tools-back-icon">
+              arrow_back_ios
+            </span>
+            <span class="wholesale-tools-back-title">Regresar</span>
+          </a>
+          <img
+            class="wholesale-tools-title-image"
+            src="{{channel.image}}"
+            alt="{{channel.id}}"
+          />
         </div>
-        <div class="wholesales-tools-sales-order">
-          <div class="wholesales-tools-sales-order-header">
-            <span class="wholesales-tools-sales-order-title">Sales Order</span>
-            <div class="wholesales-tools-sales-order-filters">
-              <form class="wholesales-tools-search-form">
-                <div class="form-group wholesales-tools-search-form-group">
-                  <span class="material-symbols-outlined back-icon">
-                    search
-                  </span>
-                  <input
-                    class="form-control wholesales-tools-search-input"
-                    placeholder="Search by sales order"
-                  />
-                </div>
-              </form>
-              <div class="wholesales-tools-month-dropdown-content">
-                <span class="wholesales-tools-selected-month">{{month}} /</span>
-                <div class="dropdown">
-                  <button
-                    class="btn btn-secondary dropdown-toggle wholesales-tools-button"
-                    type="button"
-                    id="months"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+
+        <div class="wholesale-tools-subtitle-container">
+          <span class="material-symbols-outlined"> dashboard </span>
+          <h2 class="subtitle">Categorías</h2>
+        </div>
+
+        <div class="wholesale-tools-category-container">
+          <div class="wholesales-tools-side-container">
+            <div class="wholesale-tools-card-container">
+              {% for category in categories %}
+              <button
+                class="wholesale-tools-card-button"
+                onclick="{{category.action}}(this.value)"
+              >
+                <div>
+                  <span
+                    class="wholesale-tools-card-icon material-symbols-outlined"
                   >
-                    <span class="material-symbols-outlined filter-icon">
-                      filter_alt </span
-                    >Filtrar
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="months">
-                    <li>
-                      <span class="wholesales-tools-month-item">Enero</span>
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item">Febrero</span>
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item">Marzo</span>
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item">Abril</span>
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item">Mayo</span>
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item">Junio</span>
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item">Julio</span>
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item">Agosto</span>
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item"
-                        >Septiembre</span
+                    {{category.icon}}
+                  </span>
+                </div>
+                <div
+                  class="wholesale-tools-wholesale-tools-card-description-container"
+                >
+                  <p class="wholesale-tools-card-title">{{category.name}}</p>
+                </div>
+              </button>
+              {% endfor %}
+            </div>
+            <div class="wholesales-tools-sales-order">
+              <div class="wholesales-tools-sales-order-header">
+                <span class="wholesales-tools-sales-order-title"
+                  >Sales Order</span
+                >
+                <div class="wholesales-tools-sales-order-filters">
+                  <form class="wholesales-tools-search-form">
+                    <div class="form-group wholesales-tools-search-form-group">
+                      <span class="material-symbols-outlined back-icon">
+                        search
+                      </span>
+                      <input
+                        class="form-control wholesales-tools-search-input"
+                        placeholder="Search by sales order"
+                      />
+                    </div>
+                  </form>
+                  <div class="wholesales-tools-month-dropdown-content">
+                    <span class="wholesales-tools-selected-month"
+                      >{{month}} /</span
+                    >
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle wholesales-tools-button"
+                        type="button"
+                        id="months"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
                       >
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item">Octubre</span>
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item">Noviembre</span>
-                    </li>
-                    <li>
-                      <span class="wholesales-tools-month-item">Diciembre</span>
-                    </li>
-                  </ul>
+                        <span class="material-symbols-outlined filter-icon">
+                          filter_alt </span
+                        >Filtrar
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="months">
+                        <li>
+                          <span class="wholesales-tools-month-item">Enero</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Febrero</span
+                          >
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item">Marzo</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item">Abril</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item">Mayo</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item">Junio</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item">Julio</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Agosto</span
+                          >
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Septiembre</span
+                          >
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Octubre</span
+                          >
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Noviembre</span
+                          >
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Diciembre</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div class="wholesales-tools-sales-order-list">
+                <table class="table wholesales-tools-sales-order-table">
+                  <thead class="wholesales-tools-sales-order-table-head">
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">External Order No</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Effective Date</th>
+                      <th scope="col">No. Of Pieces</th>
+                      <th scope="col">Delivered Pza</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for sales_order in sales_orders %}
+                    <tr class="wholesales-tools-table-row">
+                      <td scope="row">{{sales_order.id}}</td>
+                      <td>{{sales_order.external_id}}</td>
+                      <td>
+                        {% if sales_order.status in status_dictionary %}
+                        <div
+                          class="wholesales-tools-status wholesales-tools-status-{{status_dictionary[sales_order.status]}}"
+                        >
+                          <span
+                            class="wholesales-tools-dot wholesales-tools-dot-{{status_dictionary[sales_order.status]}}"
+                          ></span
+                          ><span>{{sales_order.status}}</span>
+                        </div>
+                        {% endif %}
+                      </td>
+                      <td>{{sales_order.date}}</td>
+                      <td>{{sales_order.quantity}}</td>
+                      <td>{{sales_order.delivered}}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-          <div class="wholesales-tools-sales-order-list">
-            <table class="table wholesales-tools-sales-order-table">
-              <thead class="wholesales-tools-sales-order-table-head">
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">External Order No</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Effective Date</th>
-                  <th scope="col">No. Of Pieces</th>
-                  <th scope="col">Delivered Pza</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for sales_order in sales_orders %}
-                <tr class="wholesales-tools-table-row">
-                  <td scope="row">{{sales_order.id}}</td>
-                  <td>{{sales_order.external_id}}</td>
-                  <td>
-                    {% if sales_order.status in status_dictionary %}
-                    <div
-                      class="wholesales-tools-status wholesales-tools-status-{{status_dictionary[sales_order.status]}}"
-                    >
-                      <span
-                        class="wholesales-tools-dot wholesales-tools-dot-{{status_dictionary[sales_order.status]}}"
-                      ></span
-                      ><span>{{sales_order.status}}</span>
-                    </div>
-                    {% endif %}
-                  </td>
-                  <td>{{sales_order.date}}</td>
-                  <td>{{sales_order.quantity}}</td>
-                  <td>{{sales_order.delivered}}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
