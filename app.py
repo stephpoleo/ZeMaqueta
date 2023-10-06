@@ -210,6 +210,61 @@ def inventory_simulation():
                             status_dictionary=status_dictionary,
                             channel_request_monitor_items=channel_request_monitor_items)
 
+@app.route('/upload_order')
+def upload_order():
+  category =  { 'id': 'PO y Carga Automatizada', 'name': 'PO y Carga Automatizada', 'description': 'Descripción', 'icon': 'upload_file'}
+  channel = { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'}
+  order_items = [{
+     'provider': '143548',
+     'branch': '830',
+     'order': '31399339',
+     'delivery_date': '2023-10-09 0:00:00',
+     'limit_date': '2023-10-21 0:00:00',
+     'client_code': '1132984821',
+     'quantity': 11,
+     'price': 8528.72,
+     'style': 'BLUE HS',
+     'provider_code': '1132984821',
+     'code': '7502278578005'
+  }, {
+     'provider': '143548',
+     'branch': '830',
+     'order': '31399339',
+     'delivery_date': '2023-10-09 0:00:00',
+     'limit_date': '2023-10-21 0:00:00',
+     'client_code': '1132984821',
+     'quantity': 11,
+     'price': 8528.72,
+     'style': 'BLUE HS',
+     'provider_code': '1132984821',
+     'code': '7502278578005'
+  }, {
+     'provider': '143548',
+     'branch': '830',
+     'order': '31399339',
+     'delivery_date': '2023-10-09 0:00:00',
+     'limit_date': '2023-10-21 0:00:00',
+     'client_code': '1132984821',
+     'quantity': 11,
+     'price': 8528.72,
+     'style': 'BLUE HS',
+     'provider_code': '1132984821',
+     'code': '7502278578005'
+  }, {
+     'provider': '143548',
+     'branch': '830',
+     'order': '31399339',
+     'delivery_date': '2023-10-09 0:00:00',
+     'limit_date': '2023-10-21 0:00:00',
+     'client_code': '1132984821',
+     'quantity': 11,
+     'price': 8528.72,
+     'style': 'BLUE HS',
+     'provider_code': '1132984821',
+     'code': '7502278578005'
+  }]
+  return render_template('upload_order.html', channel=channel, category=category, order_items=order_items)
+
 
 if __name__ == "__main__":
     app.run(host ='0.0.0.0', port = 5001, debug = True)

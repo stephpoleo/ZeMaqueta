@@ -74,7 +74,7 @@
         cursor: pointer;
         transition: 0.3s;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 16px;
       }
 
@@ -411,9 +411,6 @@
               class="wholesale-tools-wholesale-tools-card-description-container"
             >
               <p class="wholesale-tools-card-title">{{category.name}}</p>
-              <p class="wholesale-tools-card-description">
-                {{category.description}}
-              </p>
             </div>
           </button>
           {% endfor %}
