@@ -266,5 +266,127 @@ def upload_order():
   return render_template('upload_order.html', channel=channel, category=category, order_items=order_items)
 
 
+@app.route('/match_order')
+def match_order():
+  category =   { 'id': 'Conciliación de Remisiones', 'name': "Conciliación de Remisiones", 'description': 'Descripción', 'icon': 'package_2'}
+  channel = { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'}
+  category_orders = [{
+    'name': 'Colchones',
+    'items': [{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    },{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    }, {
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    }, {
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    }]
+  }, {
+    'name': 'Blancos',
+    'items': [{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    },{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    },{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    },{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    },{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    }]
+  }]
+  invoice = 12300
+  order = 25000
+  delivery = 24000
+  return render_template('match_order.html', 
+                          channel=channel, 
+                          category=category, 
+                          category_orders=category_orders,
+                          invoice=invoice,
+                          order=order,
+                          delivery=delivery
+                          )
+
 if __name__ == "__main__":
     app.run(host ='0.0.0.0', port = 5001, debug = True)
