@@ -82,6 +82,311 @@ def payment():
                             lead= lead_details,
                             credits= available_credits)
 
+@app.route('/wholesales_channels')
+def channel_list():
+    channels = [
+      { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'},
+      { 'id': 'sears', 'name': 'Sears', 'description': 'Empresa tiendas departamentales y servicios básicos de reparación de automóviles.', 'image': '../static/assets/wholesale/sears_icon.webp'},
+      { 'id': 'sams', 'name': "Sam's Club", 'description': 'Tienda de autoservicio con ventas del mayoreo y medio mayoreo mediante membresía.', 'image': '../static/assets/wholesale/sams_icon.webp'}
+      ]
+    return render_template('channel_list.html', channels=channels)
+
+@app.route('/wholesales_categories')
+def category_list():
+    categories = [
+      { 'id': 'PO y Carga Automatizada', 'name': 'PO y Carga Automatizada', 'description': 'Descripción', 'icon': 'upload_file'},
+      { 'id': 'Simulación de Movimientos y Disponibilidad de Inventario.', 'name': 'Simulación de Movimientos y Disponibilidad de Inventario.', 'description': 'Descripción', 'icon': 'inventory'},
+      { 'id': 'Conciliación de Remisiones', 'name': "Conciliación de Remisiones", 'description': 'Descripción', 'icon': 'package_2'}
+      ]
+    channel = { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'}
+    month = "Octubre"
+    sales_orders = [{
+      'id': 'SAL-ORD-1122-1123',
+      'external_id': '234234234',
+      'status': 'Overdue',
+      'date': '20/04/2023',
+      'quantity': '1200',
+      'delivered': ''
+    },{
+      'id': 'SAL-ORD-1122-1123',
+      'external_id': '234234234',
+      'status': 'Overdue',
+      'date': '20/04/2023',
+      'quantity': '1200',
+      'delivered': ''
+    },{
+      'id': 'SAL-ORD-1122-1123',
+      'external_id': '234234234',
+      'status': 'Overdue',
+      'date': '20/04/2023',
+      'quantity': '1200',
+      'delivered': ''
+    },{
+      'id': 'SAL-ORD-1122-1123',
+      'external_id': '234234234',
+      'status': 'Overdue',
+      'date': '20/04/2023',
+      'quantity': '1200',
+      'delivered': ''
+    },{
+      'id': 'SAL-ORD-1122-1123',
+      'external_id': '234234234',
+      'status': 'Overdue',
+      'date': '20/04/2023',
+      'quantity': '1200',
+      'delivered': ''
+    }]
+    status_dictionary = {
+      'Overdue': 'danger',
+      'To Deliver': 'warning',
+      'On Time': 'success',
+      'Completed': 'info'
+    }
+    return render_template('category_list.html', 
+                            categories=categories, 
+                            channel=channel, 
+                            month=month, 
+                            sales_orders=sales_orders,
+                            status_dictionary=status_dictionary
+                            )
+
+@app.route('/inventory_simulation')
+def inventory_simulation():
+    category = { 'id': 'Simulación de Movimientos y Disponibilidad de Inventario.', 'name': 'Simulación de Movimientos y Disponibilidad de Inventario.', 'description': 'Descripción', 'icon': 'inventory'}
+    channel = { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'}
+    channel_request_monitor_list = [{
+      'id': 1,
+      'name': 'P.O. 123',
+      'date': '24/11/2023',
+      'status': 'Overdue'
+    }, {
+      'id': 2,
+      'name': 'P.O. 2345',
+      'date': '23/03/2023',
+      'status': 'To Deliver',
+    }, {
+      'id': 3,
+      'name': 'P.O. 3456',
+      'date': '09/02/2023',
+      'status': 'On Time',
+    },{
+      'id': 3,
+      'name': 'P.O. 3456',
+      'date': '09/02/2023',
+      'status': 'Completed',
+    }]
+    status_dictionary = {
+      'Overdue': 'danger',
+      'To Deliver': 'warning',
+      'On Time': 'success',
+      'Completed': 'info'
+    }
+    channel_request_monitor_items = [{
+      'sku': 'SKU 123',
+      'qty_po': 300,
+      'qty_current': 100,
+      'qty_compromised': 10,
+      'stock': -210,
+      'date': '04/12/2023'
+    }, {
+      'sku': 'SKU 234',
+      'qty_po': 200,
+      'qty_current': 100,
+      'qty_compromised': 20,
+      'stock': -120,
+      'date': '15/04/2023'
+    }, {
+      'sku': 'SKU 123',
+      'qty_po': 500,
+      'qty_current': 800,
+      'qty_compromised': 10,
+      'stock': 290,
+      'date': '09/05/2023'
+    }]
+    return render_template('inventory_simulation.html', 
+                            category=category, 
+                            channel=channel, 
+                            channel_request_monitor_list=channel_request_monitor_list, 
+                            status_dictionary=status_dictionary,
+                            channel_request_monitor_items=channel_request_monitor_items)
+
+@app.route('/upload_order')
+def upload_order():
+  category =  { 'id': 'PO y Carga Automatizada', 'name': 'PO y Carga Automatizada', 'description': 'Descripción', 'icon': 'upload_file'}
+  channel = { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'}
+  order_items = [{
+     'provider': '143548',
+     'branch': '830',
+     'order': '31399339',
+     'delivery_date': '2023-10-09 0:00:00',
+     'limit_date': '2023-10-21 0:00:00',
+     'client_code': '1132984821',
+     'quantity': 11,
+     'price': 8528.72,
+     'style': 'BLUE HS',
+     'provider_code': '1132984821',
+     'code': '7502278578005'
+  }, {
+     'provider': '143548',
+     'branch': '830',
+     'order': '31399339',
+     'delivery_date': '2023-10-09 0:00:00',
+     'limit_date': '2023-10-21 0:00:00',
+     'client_code': '1132984821',
+     'quantity': 11,
+     'price': 8528.72,
+     'style': 'BLUE HS',
+     'provider_code': '1132984821',
+     'code': '7502278578005'
+  }, {
+     'provider': '143548',
+     'branch': '830',
+     'order': '31399339',
+     'delivery_date': '2023-10-09 0:00:00',
+     'limit_date': '2023-10-21 0:00:00',
+     'client_code': '1132984821',
+     'quantity': 11,
+     'price': 8528.72,
+     'style': 'BLUE HS',
+     'provider_code': '1132984821',
+     'code': '7502278578005'
+  }, {
+     'provider': '143548',
+     'branch': '830',
+     'order': '31399339',
+     'delivery_date': '2023-10-09 0:00:00',
+     'limit_date': '2023-10-21 0:00:00',
+     'client_code': '1132984821',
+     'quantity': 11,
+     'price': 8528.72,
+     'style': 'BLUE HS',
+     'provider_code': '1132984821',
+     'code': '7502278578005'
+  }]
+  return render_template('upload_order.html', channel=channel, category=category, order_items=order_items)
+
+
+@app.route('/match_order')
+def match_order():
+  category =   { 'id': 'Conciliación de Remisiones', 'name': "Conciliación de Remisiones", 'description': 'Descripción', 'icon': 'package_2'}
+  channel = { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'}
+  category_orders = [{
+    'name': 'Colchones',
+    'items': [{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    },{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    }, {
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    }, {
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    }]
+  }, {
+    'name': 'Blancos',
+    'items': [{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    },{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    },{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    },{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    },{
+      'sku': '123',
+      'external_id': '322324',
+      'date': '09/10/2023',
+      'planned_quantity': 200,
+      'delivery_quantity': 200,
+      'difference_quantity': 0, 
+      'unity_price': 8102.28,
+      'total_order': 139890,
+      'total_delivery': 221312,
+      'total_difference': 2323,
+    }]
+  }]
+  invoice = 12300
+  order = 25000
+  delivery = 24000
+  return render_template('match_order.html', 
+                          channel=channel, 
+                          category=category, 
+                          category_orders=category_orders,
+                          invoice=invoice,
+                          order=order,
+                          delivery=delivery
+                          )
 
 if __name__ == "__main__":
     app.run(host ='0.0.0.0', port = 5001, debug = True)

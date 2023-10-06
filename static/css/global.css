@@ -1,0 +1,121 @@
+:root {
+  --border-radius-sm: 4px;
+  --border-radius: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-full: 999px;
+}
+
+p {
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+  font-size: var(--font-size-relative-h1, 1.5rem);
+}
+
+body {
+  background: #f9fafa;
+  display: block;
+  margin: 0;
+  padding: 0px 16px;
+  max-width: 1290px;
+  height: 100%;
+}
+
+.title-container {
+  margin-top: 8.6vh;
+}
+
+.subtitle-container {
+  margin-top: 9.7vh;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.subtitle {
+  margin: 0;
+  font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+  font-size: var(--font-size-relative-h2, 1.5rem);
+}
+
+.card-button {
+  background-color: var(--brand-color-primary300, #fff);
+  border: 1px solid var(--brand-color-neutral300, #eee);
+  padding: 16px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-img {
+  float: left;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: var(--font-size-relative-h3, 1rem);
+  font-weight: var(--font-weight-bold, 700);
+}
+
+.card-description {
+  text-align: start;
+  font-size: var(--font-size-relative-h5, 0.75rem);
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--brand-color-neutral500, #848484);
+}
+
+.card-description-container {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 8px;
+}
+
+.card-icon {
+  font-size: 32px !important;
+  filter: invert(21%) sepia(98%) saturate(1935%) hue-rotate(197deg)
+    brightness(94%) contrast(101%);
+}
+
+.back-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: var(--brand-color-primary50, "#231f20");
+  width: fit-content;
+}
+
+.back-icon {
+  font-size: 14px !important;
+}
+
+.back-title {
+  margin: 0;
+  font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+  font-size: var(--font-size-d-p-regular, 16px);
+}
+
+.title-back-container {
+  padding-top: 32px;
+}
+
+.title-image {
+  float: left;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  margin-right: 8px;
+}

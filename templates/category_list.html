@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wholesale categories</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://d2hv74jzbyxag7.cloudfront.net/ZSLite-ze.css"
+    />
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <link rel="stylesheet" href="../static/css/category.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    style="
+      background: #f9fafa;
+      display: block;
+      margin: 0;
+      padding: 0px 16px;
+      max-width: 1290px;
+      height: 100%;
+    "
+  >
+    <style>
+      .wholesale-tools-title-back-container {
+        padding-top: 2vh;
+      }
+
+      .wholesale-tools-back-title {
+        margin: 0;
+        font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+        font-size: var(--font-size-d-p-regular, 16px);
+      }
+
+      .wholesale-tools-title-image {
+        height: 7vh;
+        object-fit: cover;
+        margin-right: 8px;
+        display: block;
+        margin-top: 5vh;
+      }
+
+      .wholesale-tools-category-container {
+      }
+
+      .wholesale-tools-card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10px;
+        gap: 24px;
+      }
+
+      .wholesale-tools-card-button {
+        background-color: var(--brand-color-primary300, #fff);
+        border: 1px solid var(--brand-color-neutral300, #eee);
+        padding: 16px;
+        font-size: 30px;
+        height: fit-content;
+        text-align: center;
+        border-radius: var(--border-radius-md);
+        cursor: pointer;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+      }
+
+      .wholesale-tools-card-icon {
+        font-size: 32px !important;
+        filter: invert(21%) sepia(98%) saturate(1935%) hue-rotate(197deg)
+          brightness(94%) contrast(101%);
+      }
+
+      .wholesale-tools-wholesale-tools-card-description-container {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        gap: 8px;
+      }
+
+      .wholesale-tools-card-title {
+        font-size: var(--font-size-relative-h3, 1rem);
+        font-weight: var(--font-weight-bold, 700);
+      }
+
+      .wholesale-tools-card-description {
+        text-align: start;
+        font-size: var(--font-size-relative-h5, 0.75rem);
+        font-weight: var(--font-weight-medium, 500);
+        color: var(--brand-color-neutral500, #848484);
+      }
+
+      .wholesale-tools-dashboard-container {
+        background-color: var(--brand-color-gray50, #fff);
+        padding: 16px;
+        border-radius: var(--border-radius-md, "8px");
+        height: calc(100%-2vh);
+        margin-top: 2vh;
+      }
+
+      .wholesale-tools-wholesale-tools-dashboard-title-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 1px solid var(--brand-color-gray400, #d9d9d9);
+        padding-bottom: 16px;
+      }
+
+      .wholesale-tools-wholesale-tools-dashboard-icon-container {
+        border-radius: var(--brand-radius-medium, 8px);
+        border: 1px solid var(--brand-color-gray300, #eee);
+        padding: 4px 6px;
+      }
+
+      .wholesale-tools-dashboard-icon {
+        filter: invert(21%) sepia(98%) saturate(1935%) hue-rotate(197deg)
+          brightness(94%) contrast(101%);
+      }
+
+      .wholesale-tools-dashboard-title {
+        margin: 0px;
+        font-size: var(--font-size-relative-h4, 1rem);
+        font-weight: var(--font-weight-medium, 500);
+        font-family: var(--brand-typography-font2, "Helvetica Neue") !important;
+      }
+
+      .wholesale-tools-subtitle-container {
+        display: flex;
+        column-gap: 2vw;
+        margin-top: 3vh;
+        margin-left: 1vh;
+      }
+
+      .wholesale-tools-back-icon {
+        font-size: 2.2vh !important;
+      }
+
+      .wholesales-tools-sales-order-list {
+        max-height: 30vh;
+        overflow: scroll;
+      }
+
+      .wholesales-tools-side-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .wholesales-tools-sales-order-item {
+        background-color: var(--brand-color-primary300, #fff);
+        border: 1px solid var(--brand-color-neutral300, #eee);
+        padding: 16px;
+        font-size: 30px;
+        text-align: center;
+        border-radius: var(--border-radius-md);
+        cursor: pointer;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .wholesales-tools-button {
+        padding: 1vh 2vh;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        background: transparent;
+        border: 1px solid var(--brand-color-gray400, #d9d9d9);
+        border-radius: var(--brand-radius-small, 4px);
+        background-color: var(--brand-color-neutral50, #ffffff);
+        color: var(--brand-color-secondary300, #005cb9);
+        font-size: var(--font-size-m-p-small, 14px);
+        width: fit-content;
+        display: flex;
+        gap: 0.5vw;
+      }
+
+      .wholesales-tools-button:focus {
+        background-color: var(--brand-color-neutral50, #ffffff);
+        box-shadow: none;
+        color: var(--brand-color-secondary300, #005cb9);
+        border: 1px solid var(--brand-color-gray400, #d9d9d9);
+        border-radius: var(--brand-radius-small, 4px);
+      }
+
+      .wholesales-tools-button::after {
+        border: none;
+      }
+
+      .wholesales-tools-button:hover {
+        cursor: pointer;
+        background-color: var(--brand-color-neutral50, #ffffff);
+        box-shadow: none;
+        color: var(--brand-color-secondary300, #005cb9);
+        border: 1px solid var(--brand-color-gray400, #d9d9d9);
+        border-radius: var(--brand-radius-small, 4px);
+      }
+
+      .wholesales-tools-sales-order {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+      }
+
+      .filter-icon {
+        font-size: var(--font-size-d-p-medium, 14px);
+      }
+
+      .wholesales-tools-sales-order-title {
+        margin: 0;
+        font-family: var(--brand-typography-font2, "Helvetica Neue");
+        font-size: var(--font-size-d-p-regular, 16px);
+        font-weight: var(--font-weight-bold, 600);
+      }
+
+      .wholesales-tools-sales-order-header {
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        padding-bottom: 2vh;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--brand-color-gray400, #d9d9d9);
+      }
+
+      .wholesales-tools-month-dropdown-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5vw;
+      }
+
+      .wholesales-tools-selected-month {
+        text-align: start;
+        font-family: var(--brand-typography-font2, "Helvetica Neue");
+        font-size: var(--font-size-d-p-medium, 14px);
+        font-weight: var(--font-weight-regular, 400);
+      }
+
+      .wholesales-tools-search-input {
+        max-height: 5vh;
+        max-width: 16vw;
+        padding-left: 0.5vw;
+        border: none;
+        outline: none;
+        font-family: var(--brand-typography-font2, "Helvetica Neue");
+        font-size: var(--font-size-relative-h5, 0.75rem);
+        background-color: var(--brand-color-gray50, #fff);
+        outline: none;
+      }
+
+      .wholesales-tools-search-input:hover {
+        border: none;
+      }
+
+      .wholesales-tools-search-input:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+
+      .wholesales-tools-search-form {
+        height: fit-content;
+        width: fit-content;
+        padding: 0 0.5vw;
+        border: 1px solid var(--brand-color-gray200, #f1f2f2);
+        border-radius: var(--brand-radius-large, 16px);
+        background-color: var(--brand-color-gray50, #fff);
+      }
+
+      .wholesales-tools-search-form-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .wholesales-tools-sales-order-filters {
+        display: flex;
+        gap: 1vw;
+        align-items: center;
+      }
+
+      .wholesales-tools-sales-order-table {
+        font-family: var(--brand-typography-font2, "Helvetica Neue");
+        background-color: var(--brand-color-gray50, #fff);
+      }
+
+      .wholesales-tools-sales-order-table > thead > tr > th {
+        border: none;
+      }
+
+      .wholesales-tools-sales-order-table > tbody > tr {
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+      }
+
+      .wholesales-tools-month-item {
+        font-family: var(--brand-typography-font2, "Helvetica Neue");
+        font-size: var(--font-size-m-p-medium, 16px);
+        cursor: pointer;
+        margin: 2vh 1vw;
+        padding: 1vh 0px;
+      }
+
+      .wholesales-tools-sales-order-table-head {
+        position: sticky;
+        top: 0;
+        background-color: var(--brand-color-gray50, #fff);
+      }
+
+      .wholesales-tools-status {
+        padding: 1vh 1vw;
+        border-radius: var(--brand-radius-small, 4px);
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+        font-size: var(--font-size-m-p-small, 14px);
+      }
+
+      .wholesales-tools-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        display: block;
+      }
+
+      .wholesales-tools-dot-danger {
+        background-color: #e24c4c;
+      }
+
+      .wholesales-tools-dot-success {
+        background-color: #2d9e58;
+      }
+
+      .wholesales-tools-dot-warning {
+        background-color: #f9814e;
+      }
+
+      .wholesales-tools-dot-info {
+        background-color: #1f6eb5;
+      }
+
+      .wholesales-tools-status-danger {
+        background-color: #fef4f5;
+        color: #e24c4c;
+      }
+
+      .wholesales-tools-status-success {
+        background-color: #eaf5ed;
+        color: #2d9e58;
+      }
+
+      .wholesales-tools-status-warning {
+        background-color: #fef5f0;
+        color: #f9814e;
+      }
+
+      .wholesales-tools-status-info {
+        background-color: #d8fbfe;
+        color: #1f6eb5;
+      }
+
+      .wholesales-tools-table-row {
+        text-align: center;
+      }
+
+      .wholesale-tools-chart {
+        margin: 2vh 0px;
+      }
+
+      .wholesale-tools-container {
+        display: grid;
+        grid-template-columns: 70% 30%;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <div class="wholesale-tools-container">
+      <div>
+        <div class="wholesale-tools-title-back-container">
+          <a href="/wholesales_channels" class="back-container">
+            <span class="material-symbols-outlined wholesale-tools-back-icon">
+              arrow_back_ios
+            </span>
+            <span class="wholesale-tools-back-title">Regresar</span>
+          </a>
+          <img
+            class="wholesale-tools-title-image"
+            src="{{channel.image}}"
+            alt="{{channel.id}}"
+          />
+        </div>
+
+        <div class="wholesale-tools-subtitle-container">
+          <span class="material-symbols-outlined"> dashboard </span>
+          <h2 class="subtitle">Categorías</h2>
+        </div>
+
+        <div class="wholesale-tools-category-container">
+          <div class="wholesales-tools-side-container">
+            <div class="wholesale-tools-card-container">
+              {% for category in categories %}
+              <button
+                class="wholesale-tools-card-button"
+                onclick="{{category.action}}(this.value)"
+              >
+                <div>
+                  <span
+                    class="wholesale-tools-card-icon material-symbols-outlined"
+                  >
+                    {{category.icon}}
+                  </span>
+                </div>
+                <div
+                  class="wholesale-tools-wholesale-tools-card-description-container"
+                >
+                  <p class="wholesale-tools-card-title">{{category.name}}</p>
+                </div>
+              </button>
+              {% endfor %}
+            </div>
+            <div class="wholesales-tools-sales-order">
+              <div class="wholesales-tools-sales-order-header">
+                <span class="wholesales-tools-sales-order-title"
+                  >Sales Order</span
+                >
+                <div class="wholesales-tools-sales-order-filters">
+                  <form class="wholesales-tools-search-form">
+                    <div class="form-group wholesales-tools-search-form-group">
+                      <span class="material-symbols-outlined back-icon">
+                        search
+                      </span>
+                      <input
+                        class="form-control wholesales-tools-search-input"
+                        placeholder="Search by sales order"
+                      />
+                    </div>
+                  </form>
+                  <div class="wholesales-tools-month-dropdown-content">
+                    <span class="wholesales-tools-selected-month"
+                      >{{month}} /</span
+                    >
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-secondary dropdown-toggle wholesales-tools-button"
+                        type="button"
+                        id="months"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <span class="material-symbols-outlined filter-icon">
+                          filter_alt </span
+                        >Filtrar
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="months">
+                        <li>
+                          <span class="wholesales-tools-month-item">Enero</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Febrero</span
+                          >
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item">Marzo</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item">Abril</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item">Mayo</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item">Junio</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item">Julio</span>
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Agosto</span
+                          >
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Septiembre</span
+                          >
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Octubre</span
+                          >
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Noviembre</span
+                          >
+                        </li>
+                        <li>
+                          <span class="wholesales-tools-month-item"
+                            >Diciembre</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wholesales-tools-sales-order-list">
+                <table class="table wholesales-tools-sales-order-table">
+                  <thead class="wholesales-tools-sales-order-table-head">
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">External Order No</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Effective Date</th>
+                      <th scope="col">No. Of Pieces</th>
+                      <th scope="col">Delivered Pza</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for sales_order in sales_orders %}
+                    <tr class="wholesales-tools-table-row">
+                      <td scope="row">{{sales_order.id}}</td>
+                      <td>{{sales_order.external_id}}</td>
+                      <td>
+                        {% if sales_order.status in status_dictionary %}
+                        <div
+                          class="wholesales-tools-status wholesales-tools-status-{{status_dictionary[sales_order.status]}}"
+                        >
+                          <span
+                            class="wholesales-tools-dot wholesales-tools-dot-{{status_dictionary[sales_order.status]}}"
+                          ></span
+                          ><span>{{sales_order.status}}</span>
+                        </div>
+                        {% endif %}
+                      </td>
+                      <td>{{sales_order.date}}</td>
+                      <td>{{sales_order.quantity}}</td>
+                      <td>{{sales_order.delivered}}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wholesale-tools-dashboard-container">
+        <div class="wholesale-tools-wholesale-tools-dashboard-title-container">
+          <div class="wholesale-tools-wholesale-tools-dashboard-icon-container">
+            <span
+              class="material-symbols-outlined wholesale-tools-dashboard-icon"
+            >
+              show_chart
+            </span>
+          </div>
+          <div>
+            <h6 class="wholesale-tools-dashboard-title">Analysis 360°</h6>
+          </div>
+        </div>
+        <div>
+          <div class="wholesale-tools-chart">
+            <canvas
+              id="monthly_chart"
+              style="width: 100%; max-width: 700px"
+            ></canvas>
+            <script>
+              const labels = [
+                "Ene",
+                "Feb",
+                "Mar",
+                "Abr",
+                "May",
+                "Jun",
+                "Jul",
+                "Ago",
+                "Sept",
+                "Oct",
+                "Nov",
+                "Dic",
+              ];
+
+              new Chart("monthly_chart", {
+                type: "bar",
+                data: {
+                  labels: labels,
+                  datasets: [
+                    {
+                      label: "Mes actual",
+                      backgroundColor: "#77DD37",
+                      data: [
+                        1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000,
+                        7000,
+                      ],
+                      stack: "Stack 0",
+                    },
+                    {
+                      label: "Mes anterior",
+                      backgroundColor: "#FCD837",
+                      data: [
+                        860, 1140, 1060, 1060, 1070, 2110, 2330, 2210, 7830,
+                        6000,
+                      ],
+                      stack: "Stack 1",
+                    },
+                  ],
+                },
+                options: {
+                  plugins: {
+                    title: {
+                      display: true,
+                      text: "Stacked Bar chart for pollution status",
+                    },
+                  },
+                  responsive: true,
+                  interaction: {
+                    intersect: false,
+                  },
+                  scales: {
+                    x: {
+                      stacked: true,
+                    },
+                    y: {
+                      stacked: true,
+                    },
+                  },
+                },
+              });
+            </script>
+          </div>
+          <div class="wholesale-tools-chart">
+            <canvas
+              id="average_chart"
+              style="width: 100%; max-width: 700px"
+            ></canvas>
+            <script>
+              const xValues = [
+                "Ene",
+                "Feb",
+                "Mar",
+                "Abr",
+                "May",
+                "Jun",
+                "Jul",
+                "Ago",
+                "Sept",
+                "Oct",
+                "Nov",
+                "Dic",
+              ];
+
+              new Chart("average_chart", {
+                type: "line",
+                data: {
+                  labels: xValues,
+                  datasets: [
+                    {
+                      data: [
+                        860, 1140, 1060, 1060, 1070, 2110, 2330, 2210, 7830,
+                        6000,
+                      ],
+                      borderColor: "#77DD37",
+                      fill: false,
+                    },
+                    {
+                      data: [
+                        1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000,
+                        7000,
+                      ],
+                      borderColor: "#3FBAFC",
+                      fill: false,
+                    },
+                  ],
+                },
+                options: {
+                  legend: { display: false },
+                },
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  </body>
+</html>
