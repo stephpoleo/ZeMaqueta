@@ -107,7 +107,7 @@
         background-color: var(--brand-color-gray50, #fff);
         padding: 16px;
         border-radius: var(--border-radius-md, "8px");
-        height: 400px;
+        height: fit-content;
       }
 
       .wholesale-tools-wholesale-tools-dashboard-title-container {
@@ -370,10 +370,16 @@
         background-color: #d8fbfe;
         color: #1f6eb5;
       }
+
       .wholesales-tools-table-row {
         text-align: center;
       }
+
+      .wholesale-tools-chart {
+        margin: 2vh 0px;
+      }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <div class="wholesale-tools-title-back-container">
       <a href="/wholesales_channels" class="back-container">
@@ -538,6 +544,127 @@
           </div>
           <div>
             <h6 class="wholesale-tools-dashboard-title">Analysis 360°</h6>
+          </div>
+        </div>
+        <div>
+          <div class="wholesale-tools-chart">
+            <canvas
+              id="monthly_chart"
+              style="width: 100%; max-width: 700px"
+            ></canvas>
+            <script>
+              const labels = [
+                "Ene",
+                "Feb",
+                "Mar",
+                "Abr",
+                "May",
+                "Jun",
+                "Jul",
+                "Ago",
+                "Sept",
+                "Oct",
+                "Nov",
+                "Dic",
+              ];
+
+              new Chart("monthly_chart", {
+                type: "bar",
+                data: {
+                  labels: labels,
+                  datasets: [
+                    {
+                      label: "Mes actual",
+                      backgroundColor: "#77DD37",
+                      data: [
+                        1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000,
+                        7000,
+                      ],
+                      stack: "Stack 0",
+                    },
+                    {
+                      label: "Mes anterior",
+                      backgroundColor: "#FCD837",
+                      data: [
+                        860, 1140, 1060, 1060, 1070, 2110, 2330, 2210, 7830,
+                        6000,
+                      ],
+                      stack: "Stack 1",
+                    },
+                  ],
+                },
+                options: {
+                  plugins: {
+                    title: {
+                      display: true,
+                      text: "Stacked Bar chart for pollution status",
+                    },
+                  },
+                  responsive: true,
+                  interaction: {
+                    intersect: false,
+                  },
+                  scales: {
+                    x: {
+                      stacked: true,
+                    },
+                    y: {
+                      stacked: true,
+                    },
+                  },
+                },
+              });
+            </script>
+          </div>
+          <div class="wholesale-tools-chart">
+            <canvas
+              id="average_chart"
+              style="width: 100%; max-width: 700px"
+            ></canvas>
+            <script>
+              const xValues = [
+                "Ene",
+                "Feb",
+                "Mar",
+                "Abr",
+                "May",
+                "Jun",
+                "Jul",
+                "Ago",
+                "Sept",
+                "Oct",
+                "Nov",
+                "Dic",
+              ];
+
+              new Chart("average_chart", {
+                type: "line",
+                data: {
+                  labels: xValues,
+                  datasets: [
+                    {
+                      data: [
+                        860, 1140, 1060, 1060, 1070, 2110, 2330, 2210, 7830,
+                        6000,
+                      ],
+                      borderColor: "#77DD37",
+                      fill: false,
+                    },
+                    {
+                      data: [
+                        1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000,
+                        7000,
+                      ],
+                      borderColor: "#3FBAFC",
+                      fill: false,
+                    },
+                  ],
+                },
+                options: {
+                  legend: { display: false },
+                },
+              });
+            </script>
           </div>
         </div>
       </div>
