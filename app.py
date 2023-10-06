@@ -99,7 +99,56 @@ def category_list():
       { 'id': 'Conciliación de Remisiones', 'name': "Conciliación de Remisiones", 'description': 'Descripción', 'icon': 'package_2'}
       ]
     channel = { 'id': 'liverpool', 'name': 'Liverpool', 'description': 'Empresa de tiendas departamentales en México.', 'image': '../static/assets/wholesale/liverpool_icon.webp'}
-    return render_template('category_list.html', categories=categories, channel=channel)
+    month = "Octubre"
+    sales_orders = [{
+      'id': 'SAL-ORD-1122-1123',
+      'external_id': '234234234',
+      'status': 'Overdue',
+      'date': '20/04/2023',
+      'quantity': '1200',
+      'delivered': ''
+    },{
+      'id': 'SAL-ORD-1122-1123',
+      'external_id': '234234234',
+      'status': 'Overdue',
+      'date': '20/04/2023',
+      'quantity': '1200',
+      'delivered': ''
+    },{
+      'id': 'SAL-ORD-1122-1123',
+      'external_id': '234234234',
+      'status': 'Overdue',
+      'date': '20/04/2023',
+      'quantity': '1200',
+      'delivered': ''
+    },{
+      'id': 'SAL-ORD-1122-1123',
+      'external_id': '234234234',
+      'status': 'Overdue',
+      'date': '20/04/2023',
+      'quantity': '1200',
+      'delivered': ''
+    },{
+      'id': 'SAL-ORD-1122-1123',
+      'external_id': '234234234',
+      'status': 'Overdue',
+      'date': '20/04/2023',
+      'quantity': '1200',
+      'delivered': ''
+    }]
+    status_dictionary = {
+      'Overdue': 'danger',
+      'To Deliver': 'warning',
+      'On Time': 'success',
+      'Completed': 'info'
+    }
+    return render_template('category_list.html', 
+                            categories=categories, 
+                            channel=channel, 
+                            month=month, 
+                            sales_orders=sales_orders,
+                            status_dictionary=status_dictionary
+                            )
 
 @app.route('/inventory_simulation')
 def inventory_simulation():
