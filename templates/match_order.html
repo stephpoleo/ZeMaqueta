@@ -152,6 +152,20 @@
         background-color: var(--brand-color-neutral50, #ffffff);
         color: var(--brand-color-secondary300, #005cb9);
         font-size: var(--font-size-m-p-small, 14px);
+        display: flex;
+        align-items: center;
+        gap: 1vh;
+        width: fit-content;
+        align-self: end;
+      }
+
+      .wholesales-tools-up-icon {
+        font-size: var(--font-size-d-p-medium, 14px);
+      }
+
+      .wholesales-tools-container {
+        display: flex;
+        flex-direction: column;
       }
     </style>
     <div class="wholesales-tools-title-back-container">
@@ -170,7 +184,12 @@
         {{channel.name}} - {{category.name}}
       </h1>
     </div>
-    <div>
+    <div class="wholesales-tools-container">
+      <button class="wholesales-tools-button">
+        <span class="material-symbols-outlined wholesales-tools-up-icon">
+          arrow_upward </span
+        >Importar
+      </button>
       <div class="wholesales-tools-summary-container">
         <div class="wholesales-tools-summary-container-item">
           <span>Real por facturar</span
